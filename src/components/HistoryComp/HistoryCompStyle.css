@@ -1,0 +1,10 @@
+.conteiner_history {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    padding: 40px
+}

@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useParams } from 'react-router-dom';
+import { Registration } from './components/Registration/Registration';
+import { Login } from './components/login/login';
+import { Navigation } from './components/navigation/navigation';
+import { Page404 } from './pages/404page';
+import { DataHousingAndCommunalServices } from './pages/DataHousingAndCommunalServices';
+import { HomePage } from './pages/HomePage';
+import { HistoryPage } from './pages/History';
+import './styles/App.css';
+import { User } from './pages/Profile';
+
 
 function App() {
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation />
+      <Routes>
+        <Route path='*' element={<Page404 />} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/history' element={<HistoryPage />} />
+        <Route path='/registration' element={<Registration />} />
+        <Route path='/data' element={<DataHousingAndCommunalServices />} />
+        <Route path='/login' element={<Login />}/>
+        <Route path='/:id' element={<User />}/>
+      </Routes>
     </div>
   );
 }
