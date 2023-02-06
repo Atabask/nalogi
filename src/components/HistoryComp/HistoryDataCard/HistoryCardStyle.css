@@ -1,0 +1,15 @@
+.conteiner {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    border: 1px solid black;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.card_title {
+    font-size: 30px;
+}
