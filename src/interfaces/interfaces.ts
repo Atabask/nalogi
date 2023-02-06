@@ -1,3 +1,4 @@
+import type { definitions } from './../../generated-types';
 export interface IDataForm {
     month: string;
     electro: string;
@@ -39,3 +40,7 @@ export interface IDataFormRegistration {
     adress: string;
     phone: number;
 }
+
+export type CommunalService = definitions['communal_service']
+
+export type Profile = definitions['profiles']

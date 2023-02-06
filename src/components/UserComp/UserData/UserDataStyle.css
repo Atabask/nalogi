@@ -1,0 +1,10 @@
+.conteiner_user_data {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.title_user_data {
+    margin: 20px;
+}

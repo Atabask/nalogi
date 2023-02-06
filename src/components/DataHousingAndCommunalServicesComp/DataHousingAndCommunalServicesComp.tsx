@@ -7,14 +7,12 @@ import { IFormInput } from '../../interfaces/interfaces';
 import { formSlice } from '../../store/slices/formSlice';
 import './DataHousingAndCommunalServicesStyle.css'
 import { OutputOfReadingsComp } from './OutputOfReadingsComp/OutputOfReadings';
-import { useNavigate } from 'react-router-dom';
 import supabase from '../../supabaseClient';
 
 
 export const DataHousingAndCommunalServicesComp: FC = () => {
 
     const user = useUser()
-    const navigate = useNavigate()
     const { register, handleSubmit } = useForm<IFormInput>()
     const { dataState } = useAppSelector(state => state.formReducer)
     const { addForm } = formSlice.actions
@@ -37,11 +35,6 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                 user_id: user?.id
             }
         ])
-
-
-
-        console.log("dataForm>>>>>",dataForm)
-        
     }
 
     return (
@@ -70,7 +63,7 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                     <button type='submit' className='data_form_button'>Сохранить</button>
                 </form>
                 <div className='data_month_container'>
-                    <h2 className='data_month'>Показания за этот месяц</h2>
+                    <h2 className='data_month'>Показания за месяц</h2>
                     <OutputOfReadingsComp dataState={dataState} />
                 </div>
             </div>

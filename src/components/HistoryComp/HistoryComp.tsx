@@ -1,8 +1,8 @@
-import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import React, { FC, useEffect, useState } from 'react';
 import supabase from '../../supabaseClient';
 import './HistoryCompStyle.css'
 import { HistoryCard } from './HistoryDataCard/HistoryCard';
+import type { CommunalService } from '../../interfaces/interfaces';
 
 
 
@@ -10,9 +10,10 @@ import { HistoryCard } from './HistoryDataCard/HistoryCard';
 
 export const HistoryComp: FC = () => {
 
-    const [dataCommunalService, setDataCommunalService] = useState(null)
+    const [dataCommunalService, setDataCommunalService] = useState<CommunalService[]>()
     
     useEffect(() => {
+        
         const getHistoryDataCommunalService = async () => {
             const { data: {user} } = await supabase.auth.getUser()
             const { data, error } = await supabase
@@ -22,7 +23,7 @@ export const HistoryComp: FC = () => {
 
             if(error) throw error
             if(data) {
-                setDataCommunalService(data)            //ПРОПИСАТЬ ТИПЫ
+                setDataCommunalService(data)            
             }
         }
         getHistoryDataCommunalService()
@@ -35,7 +36,7 @@ export const HistoryComp: FC = () => {
             { dataCommunalService && (
                 <div className='conteiner_card'>
                     {dataCommunalService.map(data => (
-                        <HistoryCard  data={data}/>
+                        <HistoryCard key={data.id} data={data}/>
                     ))}
                 </div>
             ) }

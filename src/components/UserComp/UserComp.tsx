@@ -1,8 +1,10 @@
 import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 import React, { FC, useEffect, useState } from 'react';
 import { useNavigate, } from 'react-router-dom';
+import type { Profile } from '../../interfaces/interfaces';
 import supabase from '../../supabaseClient';
 import './UserCompStyles.css'
+import { UserData } from './UserData/UserData';
 
 
 
@@ -10,7 +12,7 @@ export const UserComp: FC = () => {
 
     const supabaseClient = useSupabaseClient()
     const navigate = useNavigate()
-    const [profileData, setProfileData] = useState(null)
+    const [profileData, setProfileData] = useState<Profile[]>()
     const user = useUser()
     
 
@@ -39,16 +41,12 @@ export const UserComp: FC = () => {
 
     return (
         <div className='container_user'>
-            {/* <h1 className='user_email'>{user?.email}</h1> */}
+            <h1 className='user_email'>{user?.email}</h1>
             
             {profileData && (
                 <div>
                     {profileData.map(profile =>(
-                        <>
-                        <p>{profile.user_name}</p>
-                        <p>{profile.phone}</p>
-                        <p>{profile.adress}</p>
-                        </>
+                        <UserData profile={profile} key={profile.id}/>
                     ))}
                 </div>
             )}

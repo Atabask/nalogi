@@ -1,4 +1,3 @@
-import { definitions } from './../generated-types';
 import { createClient } from '@supabase/supabase-js'
 
 
