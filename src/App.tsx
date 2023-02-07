@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Registration } from './components/Registration/Registration';
 import { Login } from './components/login/login';
 import { Navigation } from './components/navigation/navigation';
@@ -7,7 +7,6 @@ import { Page404 } from './pages/404page';
 import { DataHousingAndCommunalServices } from './pages/DataHousingAndCommunalServices';
 import { HomePage } from './pages/HomePage';
 import { HistoryPage } from './pages/History';
-import './styles/App.css';
 import { User } from './pages/Profile';
 
 
@@ -16,7 +15,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className='App'>
       <Navigation />
       <Routes>
         <Route path='*' element={<Page404 />} />
