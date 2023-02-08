@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { IDataForm } from '../../../interfaces/interfaces';
-import './OutputOfReadingsStyle.css'
 
 
 type IProps = {

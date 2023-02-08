@@ -1,12 +1,7 @@
 import React, { FC } from 'react';
-// import './HomePageCompStyle.css'
-
-
 
 
 export const HomePageComp: FC = () => {
-
-
 
     return (
         <div className='container flex flex-col mx-auto px-7 py-9 justify-items-center h-auto bg-neutral-300 justify-between mt-28' >

@@ -3,9 +3,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { useNavigate, } from 'react-router-dom';
 import type { Profile } from '../../interfaces/interfaces';
 import supabase from '../../supabaseClient';
-import './UserCompStyles.css'
 import { UserData } from './UserData/UserData';
-
 
 
 export const UserComp: FC = () => {
@@ -26,7 +24,7 @@ export const UserComp: FC = () => {
 
                 if(error) throw error
                 if(data) {
-                    setProfileData(data)            //ПРОПИСАТЬ ТИПЫ
+                    setProfileData(data) 
                 }
         }
         getProfileData()
@@ -40,8 +38,8 @@ export const UserComp: FC = () => {
     }
 
     return (
-        <div className='container_user'>
-            <h1 className='user_email'>{user?.email}</h1>
+        <div className='container flex flex-col items-center'>
+            <h1 className='text-5xl m-14'>Данные аккаунта {user?.email}</h1>
             
             {profileData && (
                 <div>
@@ -54,7 +52,9 @@ export const UserComp: FC = () => {
             {
                 user
                     ?
-                    <button className='button_sign_out' onClick={() => signOut()}>Выйти</button>
+                    <button 
+                    className='text-2xl p-5 border-2 rounded-lg w-60 hover:bg-sky-200 duration-200 m-11' 
+                    onClick={() => signOut()}>Выйти</button>
                     :
                     null
             }

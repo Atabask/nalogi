@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import './UserDataStyle.css'
+
 
 interface IUserData {
     user_name: string;
@@ -11,15 +11,14 @@ interface IProps {
 }
 
 
-
 export const UserData: FC<IProps> = ({profile}: IProps) => {
 
 
     return (
-        <div className="conteiner_user_data">
-            <h2 className="title_user_data">Имя: {profile.user_name}</h2>
-            <h2 className="title_user_data">Телефон: {profile.phone}</h2>
-            <h2 className="title_user_data">Адрес: {profile.adress}</h2>
+        <div className="container flex flex-col gap-6">
+            <h2 className="text-3xl">Имя: {profile.user_name}</h2>
+            <h2 className="text-3xl">Телефон: {profile.phone}</h2>
+            <h2 className="text-3xl">Адрес: {profile.adress}</h2>
         </div>
     )
 }

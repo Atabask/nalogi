@@ -5,7 +5,6 @@ import { SubmitHandler } from 'react-hook-form/dist/types';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { IFormInput } from '../../interfaces/interfaces';
 import { formSlice } from '../../store/slices/formSlice';
-import './DataHousingAndCommunalServicesStyle.css'
 import { OutputOfReadingsComp } from './OutputOfReadingsComp/OutputOfReadings';
 import supabase from '../../supabaseClient';
 
@@ -38,32 +37,32 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
     }
 
     return (
-        <div className='data_container'>
-            <h1 className='data_header'>Показания {user?.email}</h1>
-            <div className='data_container_flex'>
-                <form method='POST' onSubmit={handleSubmit(onSubmit)} className='data_form'>
-                    <input className='data_form_input' defaultValue={year} readOnly {...register("year")} />
-                    <select {...register("month")} required className='data_form_select_month'>
-                        <option className='select_month'>Январь</option>
-                        <option className='select_month'>Февраль</option>
-                        <option className='select_month'>Март</option>
-                        <option className='select_month'>Апрель</option>
-                        <option className='select_month'>Май</option>
-                        <option className='select_month'>Июнь</option>
-                        <option className='select_month'>Июль</option>
-                        <option className='select_month'>Август</option>
-                        <option className='select_month'>Сентябрь</option>
-                        <option className='select_month'>Октябрь</option>
-                        <option className='select_month'>Ноябрь</option>
-                        <option className='select_month'>Декабрь</option>
+        <div className='w-4/5 flex flex-col content-center flex-wrap m-auto gap-8 p-10'>
+            <h1 className='text-6xl p-8 text-center'>Показания {user?.email}</h1>
+            <div className='flex gap-5 w-full justify-around mt-24'>
+                <form method='POST' onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-8 w-1/4'>
+                    <input className='p-5 text-2xl rounded-lg border-2 ' defaultValue={year} readOnly {...register("year")} />
+                    <select {...register("month")} required className='text-2xl p-5 rounded-lg border-2 '>
+                        <option className='text-2xl'>Январь</option>
+                        <option className='text-2xl'>Февраль</option>
+                        <option className='text-2xl'>Март</option>
+                        <option className='text-2xl'>Апрель</option>
+                        <option className='text-2xl'>Май</option>
+                        <option className='text-2xl'>Июнь</option>
+                        <option className='text-2xl'>Июль</option>
+                        <option className='text-2xl'>Август</option>
+                        <option className='text-2xl'>Сентябрь</option>
+                        <option className='text-2xl'>Октябрь</option>
+                        <option className='text-2xl'>Ноябрь</option>
+                        <option className='text-2xl'>Декабрь</option>
                     </select>
-                    <input {...register("electro")} className='data_form_input' type='text' placeholder='Электричество' />
-                    <input {...register("hotWater")} className='data_form_input' type='text' placeholder='Горячая вода' />
-                    <input {...register("coldWater")} className='data_form_input' type='text' placeholder='Холодная вода' />
-                    <button type='submit' className='data_form_button'>Сохранить</button>
+                    <input {...register("electro")} className='p-5 text-2xl rounded-lg border-2' type='text' placeholder='Электричество' />
+                    <input {...register("hotWater")} className='p-5 text-2xl rounded-lg border-2' type='text' placeholder='Горячая вода' />
+                    <input {...register("coldWater")} className='p-5 text-2xl rounded-lg border-2' type='text' placeholder='Холодная вода' />
+                    <button type='submit' className='text-2xl p-5 border-2 rounded-lg w-60 hover:bg-sky-200 duration-200 mt-9'>Сохранить</button>
                 </form>
-                <div className='data_month_container'>
-                    <h2 className='data_month'>Показания за месяц</h2>
+                <div className='flex flex-col flex-wrap items-center'>
+                    <h2 className='text-4xl'>Тут будет pie</h2>
                     <OutputOfReadingsComp dataState={dataState} />
                 </div>
             </div>

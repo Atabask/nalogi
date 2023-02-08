@@ -1,29 +1,26 @@
 import React, { FC } from 'react';
-import { Link, Route, RouteMatch, Router } from 'react-router-dom'
-import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
-import './navigationStyle.css'
+import { Link } from 'react-router-dom'
+import { useUser } from '@supabase/auth-helpers-react';
+
 
 
 
 export const Navigation: FC = () => {
 
-    const supabaseClient = useSupabaseClient()
     const user = useUser()
 
     return (
         <>
-            <nav className='nav_container'>
-                <h3 className='nav_header'>НологиПлоти</h3>
+            <nav className='m-full h-32 bg-sky-200 flex justify-between items-center px-14 '>
+                <Link to="/" className='text-6xl hover:text-gray-500 duration-200'>НологиПлоти</Link>
 
-                <div className='nav_menu'>
-                    <Link to="/" className='nav_link'>Домашняя</Link>
-                    <Link to="/history" className='nav_link'>История показаний</Link>
-                    <Link to="/data" className='nav_link'>Внести показания ЖКХ</Link>
-                    {/* <Link to="/registration" className='nav_link'>Регистрация</Link> */}
+                <div className='flex gap-10 '>
+                    <Link to="/history" className='text-3xl hover:text-gray-400 duration-200'>История показаний</Link>
+                    <Link to="/data" className='text-3xl hover:text-gray-400 duration-200'>Внести показания ЖКХ</Link>
                     {!user ?
-                        <Link to="/login" className='nav_link'>Вход в аккаунт</Link>
-                        : 
-                        <Link to="/user" className='nav_link'>{user?.email}</Link>
+                        <Link to="/login" className='text-3xl hover:text-gray-400 duration-200'>Вход в аккаунт</Link>
+                        :
+                        <Link to="/user" className='text-3xl hover:text-gray-400 duration-200'>{user?.email}</Link>
                     }
                 </div>
             </nav>

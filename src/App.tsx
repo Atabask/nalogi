@@ -12,8 +12,6 @@ import { User } from './pages/Profile';
 
 function App() {
 
-
-
   return (
     <div className='App'>
       <Navigation />
@@ -24,7 +22,7 @@ function App() {
         <Route path='/registration' element={<Registration />} />
         <Route path='/data' element={<DataHousingAndCommunalServices />} />
         <Route path='/login' element={<Login />}/>
-        <Route path='/:id' element={<User />}/>
+        <Route path='/user' element={<User />}/>
       </Routes>
     </div>
   );

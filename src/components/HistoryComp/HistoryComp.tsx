@@ -1,6 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
 import supabase from '../../supabaseClient';
-import './HistoryCompStyle.css'
 import { HistoryCard } from './HistoryDataCard/HistoryCard';
 import type { CommunalService } from '../../interfaces/interfaces';
 
@@ -31,10 +30,10 @@ export const HistoryComp: FC = () => {
     
 
     return (
-        <div className='conteiner_history'>
-            <h1>История показаний</h1>
+        <div className='flex flex-col justify-items-start m-auto w-9/12'>
+            <h1 className='text-5xl m-14 text-center'>История показаний</h1>
             { dataCommunalService && (
-                <div className='conteiner_card'>
+                <div className='flex flex-wrap'>
                     {dataCommunalService.map(data => (
                         <HistoryCard key={data.id} data={data}/>
                     ))}
