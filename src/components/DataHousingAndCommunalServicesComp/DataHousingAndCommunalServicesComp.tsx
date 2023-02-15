@@ -39,7 +39,7 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
     return (
         <div className='w-4/5 flex flex-col content-center flex-wrap m-auto gap-8 p-10'>
             <h1 className='text-6xl p-8 text-center'>Показания {user?.email}</h1>
-            <div className='flex gap-5 w-full justify-around mt-24'>
+            <div className='flex gap-5 w-full justify-around'>
                 <form method='POST' onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-8 w-1/4'>
                     <input className='p-5 text-2xl rounded-lg border-2 ' defaultValue={year} readOnly {...register("year")} />
                     <select {...register("month")} required className='text-2xl p-5 rounded-lg border-2 '>
@@ -62,8 +62,8 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                     <button type='submit' className='text-2xl p-5 border-2 rounded-lg w-60 hover:bg-sky-200 duration-200 mt-9'>Сохранить</button>
                 </form>
                 <div className='flex flex-col flex-wrap items-center'>
-                    <h2 className='text-4xl'>Тут будет pie</h2>
-                    <OutputOfReadingsComp dataState={dataState} />
+                    {/* <h2 className='text-4xl'>Тут будет pie</h2> */}
+                    <OutputOfReadingsComp  />
                 </div>
             </div>
         </div>
