@@ -4,9 +4,6 @@ import { HistoryCard } from './HistoryDataCard/HistoryCard';
 import type { CommunalService } from '../../interfaces/interfaces';
 
 
-
-
-
 export const HistoryComp: FC = () => {
 
     const [dataCommunalService, setDataCommunalService] = useState<CommunalService[]>()
@@ -33,7 +30,7 @@ export const HistoryComp: FC = () => {
         <div className='flex flex-col justify-items-start m-auto w-9/12'>
             <h1 className='text-5xl m-14 text-center'>История показаний</h1>
             { dataCommunalService && (
-                <div className='flex flex-wrap'>
+                <div className='flex flex-wrap gap-10'>
                     {dataCommunalService.map(data => (
                         <HistoryCard key={data.id} data={data}/>
                     ))}
