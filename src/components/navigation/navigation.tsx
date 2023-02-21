@@ -12,7 +12,7 @@ export const Navigation: FC = () => {
     return (
         <>
             <nav className='m-full h-32 bg-sky-200 flex justify-between items-center px-14 '>
-                <Link to="/" className='text-6xl hover:text-gray-500 duration-200'>НологиПлоти</Link>
+                <Link to="/" className='text-6xl hover:text-gray-500 duration-200'>НалогиЖКУ</Link>
 
                 <div className='flex gap-10 '>
                     <Link to="/calculate" className='text-3xl hover:text-gray-400 duration-200'>Расчет</Link>
