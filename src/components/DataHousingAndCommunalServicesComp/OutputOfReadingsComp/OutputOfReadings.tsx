@@ -18,7 +18,9 @@ export const OutputOfReadingsComp: React.FC = () => {
             const numberDataHotWater = Number(lastData?.hot_water)
             setCurrentData([...currentData, numberDataElectro, numberDataColdWater , numberDataHotWater]) 
         }
-        getDataSupabases()
+        if (currentData.length === 0) {
+            getDataSupabases()
+        }
     }, [])
 
     return (

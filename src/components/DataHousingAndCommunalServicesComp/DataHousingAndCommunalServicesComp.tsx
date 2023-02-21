@@ -7,6 +7,7 @@ import { IFormInput } from '../../interfaces/interfaces';
 import { formSlice } from '../../store/slices/formSlice';
 import { OutputOfReadingsComp } from './OutputOfReadingsComp/OutputOfReadings';
 import supabase from '../../supabaseClient';
+import { CalculationOfReadingsComp } from '../CalculationOfReadingsComp/CalculationOfReadingsComp';
 
 
 export const DataHousingAndCommunalServicesComp: FC = () => {
@@ -23,17 +24,17 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
     const onSubmit: SubmitHandler<IFormInput> = async (dataForm) => {
         dispatch(addForm(dataForm))
         const { data, error } = await supabase
-        .from('communal_service')
-        .insert([
-            {
-                year: dataForm.year,
-                month: dataForm.month,
-                electro: dataForm.electro,
-                cold_water: dataForm.coldWater,
-                hot_water: dataForm.hotWater,
-                user_id: user?.id
-            }
-        ])
+            .from('communal_service')
+            .insert([
+                {
+                    year: dataForm.year,
+                    month: dataForm.month,
+                    electro: dataForm.electro,
+                    cold_water: dataForm.coldWater,
+                    hot_water: dataForm.hotWater,
+                    user_id: user?.id
+                }
+            ])
     }
 
     return (
@@ -41,6 +42,7 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
             <h1 className='text-6xl p-8 text-center'>Показания {user?.email}</h1>
             <div className='flex gap-5 w-full justify-around'>
                 <form method='POST' onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-8 w-1/4'>
+                    <h1 className='text-4xl '>Для сохранения показаний</h1>
                     <input className='p-5 text-2xl rounded-lg border-2 ' defaultValue={year} readOnly {...register("year")} />
                     <select {...register("month")} required className='text-2xl p-5 rounded-lg border-2 '>
                         <option className='text-2xl'>Январь</option>
@@ -62,8 +64,7 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                     <button type='submit' className='text-2xl p-5 border-2 rounded-lg w-60 hover:bg-sky-200 duration-200 mt-9'>Сохранить</button>
                 </form>
                 <div className='flex flex-col flex-wrap items-center'>
-                    {/* <h2 className='text-4xl'>Тут будет pie</h2> */}
-                    <OutputOfReadingsComp  />
+                    <OutputOfReadingsComp />
                 </div>
             </div>
         </div>

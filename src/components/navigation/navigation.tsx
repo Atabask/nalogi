@@ -15,8 +15,9 @@ export const Navigation: FC = () => {
                 <Link to="/" className='text-6xl hover:text-gray-500 duration-200'>НологиПлоти</Link>
 
                 <div className='flex gap-10 '>
-                    <Link to="/history" className='text-3xl hover:text-gray-400 duration-200'>История показаний</Link>
-                    <Link to="/data" className='text-3xl hover:text-gray-400 duration-200'>Внести показания ЖКХ</Link>
+                    <Link to="/calculate" className='text-3xl hover:text-gray-400 duration-200'>Расчет</Link>
+                    <Link to="/history" className='text-3xl hover:text-gray-400 duration-200'>История</Link>
+                    <Link to="/data" className='text-3xl hover:text-gray-400 duration-200'>Показания</Link>
                     {!user ?
                         <Link to="/login" className='text-3xl hover:text-gray-400 duration-200'>Вход в аккаунт</Link>
                         :

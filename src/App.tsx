@@ -8,6 +8,7 @@ import { DataHousingAndCommunalServices } from './pages/DataHousingAndCommunalSe
 import { HomePage } from './pages/HomePage';
 import { HistoryPage } from './pages/History';
 import { User } from './pages/Profile';
+import { Calculate } from './pages/CalculatePage';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/data' element={<DataHousingAndCommunalServices />} />
         <Route path='/login' element={<Login />}/>
         <Route path='/user' element={<User />}/>
+        <Route path='/calculate' element={<Calculate />}/>
       </Routes>
     </div>
   );
