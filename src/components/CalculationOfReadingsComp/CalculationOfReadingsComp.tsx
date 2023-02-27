@@ -6,6 +6,7 @@ export const CalculationOfReadingsComp: FC = () => {
     const [amount, setAmount] = useState<string>('')
     const [rate, setRate] = useState<string>('')
     const [result, setResult] = useState<string>('')
+    
 
     const handleChangeAmount = (event: React.ChangeEvent<HTMLInputElement>) => {
         setAmount(event.target.value)
