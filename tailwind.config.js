@@ -7,6 +7,7 @@ module.exports = {
     container: {
       center: true,
     },
+
   },
   plugins: [],
 }

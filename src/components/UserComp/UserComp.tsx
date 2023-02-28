@@ -13,7 +13,6 @@ export const UserComp: FC = () => {
     const [profileData, setProfileData] = useState<Profile[]>()
     const user = useUser()
     
-
     useEffect(() => {
         const getProfileData = async () => {
             const { data: {user} } = await supabase.auth.getUser()
@@ -22,13 +21,11 @@ export const UserComp: FC = () => {
                 .select()
                 .eq('id', user?.id)
 
-                if(error) throw error
                 if(data) {
                     setProfileData(data) 
                 }
         }
         getProfileData()
-        
     }, [])
 
 
@@ -48,7 +45,6 @@ export const UserComp: FC = () => {
                     ))}
                 </div>
             )}
-
             {
                 user
                     ?

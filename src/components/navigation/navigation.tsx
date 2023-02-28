@@ -13,11 +13,18 @@ export const Navigation: FC = () => {
         <>
             <nav className='m-full h-32 bg-sky-200 flex justify-between items-center px-14 '>
                 <Link to="/" className='text-6xl hover:text-gray-500 duration-200'>НалогиЖКУ</Link>
-
                 <div className='flex gap-10 '>
+                    {
+                        user
+                            ?
+                            <>
+                                <Link to="/history" className='text-3xl hover:text-gray-400 duration-200'>История</Link>
+                                <Link to="/data" className='text-3xl hover:text-gray-400 duration-200'>Показания</Link>
+                            </>
+                            :
+                            null
+                    }
                     <Link to="/calculate" className='text-3xl hover:text-gray-400 duration-200'>Расчет</Link>
-                    <Link to="/history" className='text-3xl hover:text-gray-400 duration-200'>История</Link>
-                    <Link to="/data" className='text-3xl hover:text-gray-400 duration-200'>Показания</Link>
                     {!user ?
                         <Link to="/login" className='text-3xl hover:text-gray-400 duration-200'>Вход в аккаунт</Link>
                         :

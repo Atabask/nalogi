@@ -9,15 +9,13 @@ export const HistoryComp: FC = () => {
     const [dataCommunalService, setDataCommunalService] = useState<CommunalService[]>()
     
     useEffect(() => {
-        
         const getHistoryDataCommunalService = async () => {
             const { data: {user} } = await supabase.auth.getUser()
             const { data, error } = await supabase
             .from('communal_service')
             .select('*')
             .eq('user_id', user?.id)
-
-            if(error) throw error
+            
             if(data) {
                 setDataCommunalService(data)            
             }

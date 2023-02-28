@@ -1,4 +1,5 @@
 import type { definitions } from './../../generated-types';
+
 export interface IDataForm {
     month: string;
     electro: string;
@@ -34,6 +35,14 @@ export interface IFormInput {
 
 
 export interface IDataFormRegistration {
+    username: string;
+    email: string;
+    password: string;
+    adress: string;
+    phone: number;
+}
+
+export interface IFormRegistration {
     username: string;
     email: string;
     password: string;

@@ -1,18 +1,10 @@
 import React, { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { IDataFormRegistration } from '../../interfaces/interfaces';
+import { IDataFormRegistration, IFormRegistration } from '../../interfaces/interfaces';
 import { formRegistrationSlice } from '../../store/slices/formRegistrationSlice';
 import supabase from '../../supabaseClient';
 
-
-interface IFormRegistration {
-    username: string;
-    email: string;
-    password: string;
-    adress: string;
-    phone: number;
-}
 
 export const Registration: FC = () => {
 

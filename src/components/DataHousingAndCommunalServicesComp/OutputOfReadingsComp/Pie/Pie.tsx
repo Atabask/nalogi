@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import supabase from "../../../../supabaseClient";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -10,6 +11,22 @@ interface IProps {
 
 export const PieComponent: FC<IProps> = ({currentData}) => {
     
+    const [month, setMonth] = useState<string>('')
+
+    useEffect(() => {
+        const getMonthSupabases = async () => {
+            const { data: communal_service, error } = await supabase
+                .from('communal_service')
+                .select('month')
+            const lastMonth = (communal_service?.at(-1))
+            const stringMonth = lastMonth?.month
+            setMonth(stringMonth)
+        }
+        if(month.length === 0) {
+            getMonthSupabases()
+        }
+    })
+
     const dataPieRender = {
         labels: ['Электричество', 'Холодная вода', 'Горячая вода'],
         datasets: [
@@ -31,10 +48,11 @@ export const PieComponent: FC<IProps> = ({currentData}) => {
             },
         ],
     };
+    
 
     return (
         <>
-            <h1 className="text-4xl text-center mb-8">Последние сохраненные показания показания</h1>
+            <h1 className="text-4xl text-center mb-8">Показания за {month}</h1>
             <Pie className='mt-5' height={600} width={600} data={dataPieRender} />
         </>
     )
