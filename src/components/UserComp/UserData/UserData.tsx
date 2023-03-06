@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import { useUser } from '@supabase/auth-helpers-react';
+import { UserImage } from "./UserImage";
 
 
 interface IUserData {
@@ -11,14 +13,22 @@ interface IProps {
 }
 
 
-export const UserData: FC<IProps> = ({profile}: IProps) => {
+export const UserData: FC<IProps> = ({ profile }: IProps) => {
 
+    const user = useUser()
 
     return (
-        <div className="container flex flex-col gap-6">
-            <h2 className="text-3xl">Имя: {profile.user_name}</h2>
-            <h2 className="text-3xl">Телефон: {profile.phone}</h2>
-            <h2 className="text-3xl">Адрес: {profile.adress}</h2>
-        </div>
+        <>
+            <div className='container flex gap-6'>
+                <UserImage />
+                <div className="flex flex-col gap-6 justify-around">
+                    <h2 className='text-3xl'>Имя: {profile.user_name}</h2>
+                    <h2 className='text-3xl'>Телефон: {profile.phone}</h2>
+                    <h2 className='text-3xl'>Адрес: {profile.adress}</h2>
+                </div>
+            </div>
+        </>
     )
 }
+
+

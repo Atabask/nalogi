@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom'
 import { useUser } from '@supabase/auth-helpers-react';
+import supabaseClient from '../../supabaseClient';
+import logoutImg from '../../assets/icons/png/logout.png'
 
 
 
@@ -28,7 +30,12 @@ export const Navigation: FC = () => {
                     {!user ?
                         <Link to="/login" className='text-3xl hover:text-gray-400 duration-200'>Вход в аккаунт</Link>
                         :
-                        <Link to="/user" className='text-3xl hover:text-gray-400 duration-200'>{user?.email}</Link>
+                        <>
+                            <Link to="/user" className='text-3xl hover:text-gray-400 duration-200'>{user?.email}</Link>
+                            <button className='hover:text-gray-400 duration-200' onClick={() => supabaseClient.auth.signOut()}>
+                                <img className='w-10 h-10 hover:text-gray-400 duration-200' src={logoutImg} alt='#' />
+                            </button>
+                        </>
                     }
                 </div>
             </nav>
