@@ -17,7 +17,7 @@ export const UserImage: FC = () => {
     const avatarSrc = document.getElementById('avatar') as HTMLImageElement
 
     const onSubmit: SubmitHandler<IPicture> = async (picture: IPicture) => {
-        const avatar: any = picture.picture.item(0)                     //ИСПРАВИТЬ ТИП
+        const avatar = picture.picture.item(0) as File
 
         const { data, error } = await supabase
             .storage
@@ -49,11 +49,11 @@ export const UserImage: FC = () => {
                 {image
                     ?
                     <div className="flex flex-col gap-6 relative">
-                        <img width={600} height={600} className="relative" id="avatar" src={avatar} alt="Фото пользователя" />
+                        <img width={600} height={600} id="avatar" src={avatar} alt="Фото пользователя" />
 
-                        <form className="absolute bottom-1 left-1" method="post" encType="multipart/form-data" onSubmit={handleSubmit(onSubmit)}>
+                        <form className="bottom-1 left-1" method="post" encType="multipart/form-data" onSubmit={handleSubmit(onSubmit)}>
                             <input {...register('picture')} type='file' accept='image/*' name='picture' className='text-2xl w-2/3' />
-                            <button className="border-2">Изменить</button>
+                            <button className="border-2 p-4 rounded-lg hover:bg-sky-200 duration-200 text-2xl">Изменить</button>
                         </form>
                     </div>
                     :

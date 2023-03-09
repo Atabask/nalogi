@@ -50,6 +50,12 @@ export interface IFormRegistration {
     phone: number;
 }
 
+export interface IUserData {
+    user_name: string;
+    adress: string;
+    phone: string;
+}
+
 export type CommunalService = definitions['communal_service']
 
 export type Profile = definitions['profiles']

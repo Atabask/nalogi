@@ -41,6 +41,7 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                     user_id: user?.id
                 }
             ])
+            window.location.reload()
 
     }
 

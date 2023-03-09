@@ -43,7 +43,7 @@ export const Registration: FC = () => {
                 <input {...register("username")} className="p-5 text-2xl rounded-lg border-2 w-2/3" placeholder='Введите имя и фамилию' type="text" />
                 <input {...register("email")} className="p-5 text-2xl rounded-lg border-2 w-2/3" placeholder='Введите Email' type="email" />
                 <input {...register("password")} className="p-5 text-2xl rounded-lg border-2 w-2/3" placeholder='Введите пароль' type="password" />
-                <input {...register("adress")} className="p-5 text-2xl rounded-lg border-2 w-2/3" placeholder='Введите адерс' type="text" />
+                <input {...register("adress")} className="p-5 text-2xl rounded-lg border-2 w-2/3" placeholder='Введите адрeс' type="text" />
                 <input {...register("phone")} className="p-5 text-2xl rounded-lg border-2 w-2/3" placeholder='Введите номер телефона' type="tel" />
                 <button type='submit' className="text-2xl p-5 border-2 rounded-lg w-60 hover:bg-sky-200 duration-200">Регистрация</button>
             </form>
