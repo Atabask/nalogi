@@ -56,6 +56,17 @@ export interface IUserData {
     phone: string;
 }
 
+export interface IGetHistory {
+    cold_water: string,
+    hot_water: string,
+    electro: string,
+    month: string,
+    year: string,
+    id: number,
+    user_id: string
+}
+
+
 export type CommunalService = definitions['communal_service']
 
 export type Profile = definitions['profiles']
