@@ -54,9 +54,9 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                     <>
                         <h1 className='text-6xl p-8 text-center'>Показания {user?.email}</h1>
                         <div className='flex gap-5 w-full justify-around'>
-                            <form method='POST' onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-8 w-1/4'>
+                            <form method='POST' onSubmit={handleSubmit(onSubmit)} className='form-primary w-1/4'>
                                 <h1 className='text-4xl '>Для сохранения показаний</h1>
-                                <input className='p-5 text-2xl rounded-lg border-2 ' defaultValue={year} readOnly {...register("year")} />
+                                <input className='input-primary' defaultValue={year} readOnly {...register("year")} />
                                 <select {...register("month")} required className='text-2xl p-5 rounded-lg border-2 '>
                                     <option className='text-2xl'>Январь</option>
                                     <option className='text-2xl'>Февраль</option>
@@ -72,34 +72,34 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                                     <option className='text-2xl'>Декабрь</option>
                                 </select>
                                 <div className='flex relative'>
-                                    <input  {...register("electro")} required className='p-5 w-full text-2xl rounded-lg border-2 ' type='text' placeholder='Электричество' />
+                                    <input  {...register("electro")} required className='input-primary w-full' type='text' placeholder='Электричество' />
                                     {
                                         !dataState.length ?
-                                            <img className='w-10 h-10 right-2 inset-y-4 absolute' src={imgElectroBlack} alt="#" />
+                                            <img className='icon-data-primary' src={imgElectroBlack} alt="#" />
                                             :
-                                            <img className='w-10 h-10 right-2 inset-y-4 absolute' src={imgElectroColor} alt="#" />
+                                            <img className='icon-data-primary' src={imgElectroColor} alt="#" />
                                     }
                                 </div>
                                 <div className='flex relative'>
-                                    <input {...register("hotWater")} required className='p-5 w-full text-2xl rounded-lg border-2' type='text' placeholder='Горячая вода' />
+                                    <input {...register("hotWater")} required className='input-primary w-full' type='text' placeholder='Горячая вода' />
                                     {
                                         !dataState.length ?
-                                            <img className='w-10 h-10 right-2 inset-y-4 absolute' src={imgHotWaterBlack} alt="#" />
+                                            <img className='icon-data-primary' src={imgHotWaterBlack} alt="#" />
                                             :
-                                            <img className='w-10 h-10 right-2 inset-y-4 absolute' src={imgHotWaterColor} alt="#" />
+                                            <img className='icon-data-primary' src={imgHotWaterColor} alt="#" />
                                     }
                                 </div>
                                 <div className='flex relative'>
-                                    <input {...register("coldWater")} required className='p-5 w-full text-2xl rounded-lg border-2' type='text' placeholder='Холодная вода' />
+                                    <input {...register("coldWater")} required className='input-primary w-full' type='text' placeholder='Холодная вода' />
                                     {
                                         !dataState.length ?
-                                            <img className='w-10 h-10 right-2 inset-y-4  absolute' src={imgColdWaterBlack} alt="#" />
+                                            <img className='icon-data-primary' src={imgColdWaterBlack} alt="#" />
                                             :
-                                            <img className='w-10 h-10 right-2 inset-y-4  absolute' src={imgColdWaterColor} alt="#" />
+                                            <img className='icon-data-primary' src={imgColdWaterColor} alt="#" />
                                     }
                                 </div>
                                 <div className='flex gap-6 items-center'>
-                                    <button type='submit' className='text-2xl p-5 border-2 rounded-lg w-60 hover:bg-sky-200 duration-200 '>Сохранить</button>
+                                    <button type='submit' className='btn-primary w-60'>Сохранить</button>
                                     {   
                                     !dataState.length ?
                                         null

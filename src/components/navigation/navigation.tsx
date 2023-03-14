@@ -1,39 +1,43 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useUser } from '@supabase/auth-helpers-react';
 import supabaseClient from '../../supabaseClient';
 import logoutImg from '../../assets/icons/png/logout.png'
 
 
-
-
 export const Navigation: FC = () => {
 
     const user = useUser()
+    const navigate = useNavigate()
+
+    const signOut = () => {
+        supabaseClient.auth.signOut()
+        navigate('/')
+    }
 
     return (
         <>
             <nav className='m-full h-32 bg-sky-200 flex justify-between items-center px-14 '>
-                <Link to="/" className='text-6xl hover:text-gray-500 duration-200'>НалогиЖКУ</Link>
-                <div className='flex gap-10 '>
+                <Link to="/" className='text-6xl hover:scale-125 duration-300'>НалогиЖКУ</Link>
+                <div className='flex gap-12'>
                     {
                         user
                             ?
                             <>
-                                <Link to="/history" className='text-3xl hover:text-gray-400 duration-200'>История</Link>
-                                <Link to="/data" className='text-3xl hover:text-gray-400 duration-200'>Показания</Link>
+                                <Link to="/history" className='link-primary'>История</Link>
+                                <Link to="/data" className='link-primary'>Показания</Link>
                             </>
                             :
                             null
                     }
-                    <Link to="/calculate" className='text-3xl hover:text-gray-400 duration-200'>Расчет</Link>
+                    <Link to="/calculate" className='link-primary'>Расчет</Link>
                     {!user ?
-                        <Link to="/login" className='text-3xl hover:text-gray-400 duration-200'>Вход в аккаунт</Link>
+                        <Link to="/login" className='link-primary'>Вход в аккаунт</Link>
                         :
                         <>
-                            <Link to="/user" className='text-3xl hover:text-gray-400 duration-200'>{user?.email}</Link>
-                            <button className='hover:text-gray-400 duration-200' onClick={() => supabaseClient.auth.signOut()}>
-                                <img className='w-10 h-10 hover:text-gray-400 duration-200' src={logoutImg} alt='#' />
+                            <Link to="/user" className='link-primary'>{user?.email}</Link>
+                            <button className='hover:scale-125 duration-300' onClick={signOut}>
+                                <img className='w-10 h-10' src={logoutImg} alt='#' />
                             </button>
                         </>
                     }

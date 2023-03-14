@@ -49,7 +49,7 @@ export const UserComp: FC = () => {
                 user
                     ?
                     <button 
-                    className='text-2xl p-5 border-2 rounded-lg w-60 hover:bg-sky-200 duration-200 m-11' 
+                    className='btn-primary w-60 m-11' 
                     onClick={() => signOut()}>Выйти</button>
                     :
                     null

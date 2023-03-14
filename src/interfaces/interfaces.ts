@@ -66,6 +66,10 @@ export interface IGetHistory {
     user_id: string
 }
 
+export interface IPicture {
+    picture: FileList
+}
+
 
 export type CommunalService = definitions['communal_service']
 

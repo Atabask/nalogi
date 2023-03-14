@@ -38,15 +38,15 @@ export const CalculationOfReadingsComp: FC = () => {
                 <div className='flex flex-col gap-4'>
                     <label className='flex m-10 justify-between'>
                         <span className='text-2xl p-8'>Данные с ИПУ: </span>
-                        <input className='p-5 text-2xl rounded-lg border-2' onChange={handleChangeAmount} type='text' placeholder='Объём' value={amount} />
+                        <input className='input-primary' onChange={handleChangeAmount} type='text' placeholder='Объём' value={amount} />
                     </label>
                     <label className='flex m-10 justify-between '>
                         <span className='text-2xl p-8'>Тариф для оплаты: </span>
-                        <input className='p-5 text-2xl rounded-lg border-2' onChange={handleChangeRate} type='text' placeholder='Тариф' value={rate} />
+                        <input className='input-primary' onChange={handleChangeRate} type='text' placeholder='Тариф' value={rate} />
                     </label>
                     <div className='flex justify-center'>
-                        <button className='text-2xl p-5 border-2 rounded-lg w-60 hover:bg-sky-200 duration-200 m-9' onClick={(() => calculate())}>Рассчитать</button>
-                        <button className='text-2xl p-5 border-2 rounded-lg w-60 hover:bg-sky-200 duration-200 m-9' onClick={(() => remove())}>Сбросить</button>
+                        <button className='btn-primary w-60 m-9' onClick={(() => calculate())}>Рассчитать</button>
+                        <button className='btn-primary w-60 m-9' onClick={(() => remove())}>Сбросить</button>
                     </div>
                 </div>
                 {

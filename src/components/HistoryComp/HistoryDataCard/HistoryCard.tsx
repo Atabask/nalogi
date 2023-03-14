@@ -7,7 +7,6 @@ import { useUser } from '@supabase/auth-helpers-react';
 import imgEdit from '../../../assets/icons/png/edit.png';
 
 
-
 interface IProps {
     data: IGetHistory
 }
@@ -37,7 +36,7 @@ export const HistoryCard: FC<IProps> = ({ data }: IProps) => {
                     .eq('user_id', user?.id)
                 window.location.reload()
             } catch (err) {
-
+                throw err
             }
         }
         updateProfile()
@@ -57,9 +56,9 @@ export const HistoryCard: FC<IProps> = ({ data }: IProps) => {
                 </button>
             </div>
             <Modal active={modalActive} setActive={setModalActive}>
-                <form method='POST' onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-8 w-full'>
+                <form method='POST' onSubmit={handleSubmit(onSubmit)} className='form-primary w-full'>
                     <h1 className='text-4xl '>Для редактирования показаний</h1>
-                    <input className='p-5 text-2xl rounded-lg border-2 ' defaultValue={year} {...register("year")} />
+                    <input className='input-primary w-full' defaultValue={year} {...register("year")} />
                     <select {...register("month")} required className='text-2xl p-5 rounded-lg border-2 '>
                         <option className='text-2xl'>Январь</option>
                         <option className='text-2xl'>Февраль</option>
@@ -74,10 +73,10 @@ export const HistoryCard: FC<IProps> = ({ data }: IProps) => {
                         <option className='text-2xl'>Ноябрь</option>
                         <option className='text-2xl'>Декабрь</option>
                     </select>
-                    <input  {...register("electro")} defaultValue={data.electro} required className='p-5 w-full text-2xl rounded-lg border-2 ' type='text' placeholder='Электричество' />
-                    <input {...register("hotWater")} defaultValue={data.hot_water} required className='p-5 w-full text-2xl rounded-lg border-2' type='text' placeholder='Горячая вода' />
-                    <input {...register("coldWater")} defaultValue={data.cold_water} required className='p-5 w-full text-2xl rounded-lg border-2' type='text' placeholder='Холодная вода' />
-                    <button type='submit' className='shadow-md text-2xl p-5 border-2 rounded-lg w-60 hover:bg-sky-200 duration-200'>Сохранить</button>
+                    <input  {...register("electro")} defaultValue={data.electro} required className='input-primary w-full' type='text' placeholder='Электричество' />
+                    <input {...register("hotWater")} defaultValue={data.hot_water} required className='input-primary w-full' type='text' placeholder='Горячая вода' />
+                    <input {...register("coldWater")} defaultValue={data.cold_water} required className='input-primary w-full' type='text' placeholder='Холодная вода' />
+                    <button type='submit' className='shadow-md btn-primary'>Сохранить</button>
                 </form>
             </Modal>
         </>
