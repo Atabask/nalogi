@@ -1,10 +1,10 @@
 import React, { FC, useState } from 'react';
-import { IGetHistory } from '../../../interfaces/interfaces';
-import { Modal } from '../../modal/Modal';
+import { IGetHistory } from '@interfaces';
+import { Modal } from '@components/modal/Modal';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import supabase from '../../../supabaseClient';
+import supabase from '@supabaseClient';
 import { useUser } from '@supabase/auth-helpers-react';
-import imgEdit from '../../../assets/icons/png/edit.png';
+import { editImg } from '@icons';
 
 
 interface IProps {
@@ -52,7 +52,7 @@ export const HistoryCard: FC<IProps> = ({ data }: IProps) => {
                 <h2 className="text-4xl">Горячая воды: {data.hot_water} Кубов</h2>
                 <h2 className="text-4xl">Холодная вода: {data.cold_water} Кубов</h2>
                 <button className='absolute top-2 right-2 hover:bg-sky-200 duration-200 rounded-lg p-1'>
-                    <img src={imgEdit} alt="#" className='w-10 h-10' onClick={() => setModalActive(true)} />
+                    <img src={editImg} alt="#" className='w-10 h-10' onClick={() => setModalActive(true)} />
                 </button>
             </div>
             <Modal active={modalActive} setActive={setModalActive}>

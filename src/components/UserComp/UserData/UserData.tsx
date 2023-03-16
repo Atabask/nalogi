@@ -1,10 +1,10 @@
 import React, { FC, useState } from "react";
 import { useUser } from '@supabase/auth-helpers-react';
 import { UserImage } from "./UserImage";
-import { Modal } from "../../modal/Modal";
+import { Modal } from "@components/modal/Modal";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { IUserData } from "../../../interfaces/interfaces";
-import supabase from "../../../supabaseClient";
+import { IUserData } from "@interfaces";
+import supabase from "@supabaseClient";
 
 interface IProps {
     profile: IUserData

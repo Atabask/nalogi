@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import img404 from '../../assets/icons/png/error404.png';
+import { img404 } from '@icons';
 
 
 export const Page404Component: FC = () => {

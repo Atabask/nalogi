@@ -1,4 +1,4 @@
-import type { definitions } from './../../generated-types';
+import type { definitions } from '@generated-types';
 
 export interface IDataForm {
     month: string;

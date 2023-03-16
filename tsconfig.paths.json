@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@app/*": ["./*"],
+        "@icons": ["./src/assets/icons/png/images"],
+        "@supabaseClient": ["./src/supabaseClient"],
+        "@interfaces": ["./src/interfaces/interfaces"],
+        "@components/*": ["./src/components/*"],
+        "@hooks/*": ["./src/hooks/*"],
+        "@store/*": ["./src/store/*"],
+        "@generated-types": ["./generated-types"],
+      }
+    }
+  }

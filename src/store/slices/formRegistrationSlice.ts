@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IDataFormRegistration } from '../../interfaces/interfaces';
+import { IDataFormRegistration } from '@interfaces';
 
 
 interface IDataFormRegistrationState {

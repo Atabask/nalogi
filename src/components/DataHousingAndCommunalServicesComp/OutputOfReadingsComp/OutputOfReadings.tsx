@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import supabase from '../../../supabaseClient';
+import supabase from '@supabaseClient';
 import { PieComponent } from './Pie/Pie';
 
 

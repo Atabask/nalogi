@@ -1,7 +1,7 @@
 import { useUser } from '@supabase/auth-helpers-react';
 import React, { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import supabase from '../../supabaseClient';
+import supabase from '@supabaseClient';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
 export const Login: FC = () => {

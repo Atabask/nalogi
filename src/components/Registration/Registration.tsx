@@ -2,10 +2,10 @@ import { useUser } from '@supabase/auth-helpers-react';
 import React, { FC, useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { IDataFormRegistration, IFormRegistration } from '../../interfaces/interfaces';
-import { formRegistrationSlice } from '../../store/slices/formRegistrationSlice';
-import supabase from '../../supabaseClient';
+import { useAppDispatch, useAppSelector } from '@hooks/redux';
+import { IDataFormRegistration, IFormRegistration } from '@interfaces';
+import { formRegistrationSlice } from '@store/slices/formRegistrationSlice';
+import supabase from '@supabaseClient';
 
 
 export const Registration: FC = () => {

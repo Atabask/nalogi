@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { useUser } from '@supabase/auth-helpers-react';
-import supabaseClient from '../../supabaseClient';
-import logoutImg from '../../assets/icons/png/logout.png'
+import supabaseClient from '@supabaseClient';
+import { logoutImg } from '@icons'
 
 
 export const Navigation: FC = () => {

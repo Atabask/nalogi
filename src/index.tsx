@@ -1,4 +1,4 @@
-import React, { StrictMode } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { setupStore } from './store/index';
 import { BrowserRouter } from 'react-router-dom';
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
-import supabase from './supabaseClient';
+import supabase from '@supabaseClient';
 
 
 const store = setupStore()

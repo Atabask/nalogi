@@ -2,18 +2,20 @@ import { useUser } from '@supabase/auth-helpers-react';
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { SubmitHandler } from 'react-hook-form/dist/types';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { IFormInput } from '../../interfaces/interfaces';
-import { formSlice } from '../../store/slices/formSlice';
+import { useAppDispatch, useAppSelector } from '@hooks/redux';
+import { IFormInput } from '@interfaces';
+import { formSlice } from '@store/slices/formSlice';
 import { OutputOfReadingsComp } from './OutputOfReadingsComp/OutputOfReadings';
-import supabase from '../../supabaseClient';
-import imgElectroBlack from '../../assets/icons/png/electroBlack.png';
-import imgElectroColor from '../../assets/icons/png/electroColor.png';
-import imgColdWaterBlack from '../../assets/icons/png/coldWaterBlack.png';
-import imgColdWaterColor from '../../assets/icons/png/coldWaterColor.png';
-import imgHotWaterBlack from '../../assets/icons/png/hotWaterBlack.png';
-import imgHotWaterColor from '../../assets/icons/png/hotWaterColor.png';
-import imgCheckMark from '../../assets/icons/png/checkMark.png';
+import supabase from '@supabaseClient';
+import {
+    imgElectroBlack,
+    imgElectroColor,
+    imgHotWaterBlack,
+    imgHotWaterColor,
+    imgColdWaterBlack,
+    imgColdWaterColor,
+    imgCheckMark
+} from '@icons';
 
 
 export const DataHousingAndCommunalServicesComp: FC = () => {
@@ -41,7 +43,7 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                     user_id: user?.id
                 }
             ])
-            window.location.reload()
+        window.location.reload()
 
     }
 
@@ -100,11 +102,11 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                                 </div>
                                 <div className='flex gap-6 items-center'>
                                     <button type='submit' className='btn-primary w-60'>Сохранить</button>
-                                    {   
-                                    !dataState.length ?
-                                        null
-                                        :
-                                        <img className='w-10 h-10' src={imgCheckMark} alt="#" />  
+                                    {
+                                        !dataState.length ?
+                                            null
+                                            :
+                                            <img className='w-10 h-10' src={imgCheckMark} alt="#" />
                                     }
                                 </div>
                             </form>

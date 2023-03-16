@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
-import supabase from '../../supabaseClient';
+import supabase from '@supabaseClient';
 import { HistoryCard } from './HistoryDataCard/HistoryCard';
-import type { CommunalService } from '../../interfaces/interfaces';
+import type { CommunalService } from '@interfaces';
 
 
 export const HistoryComp: FC = () => {
