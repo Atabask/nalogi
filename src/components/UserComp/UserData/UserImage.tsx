@@ -11,6 +11,7 @@ export const UserImage: FC = () => {
     const user = useUser()
     const { register, handleSubmit } = useForm<IPicture>()
     const [avatar, setAvatar] = useState<string>('')
+    const [file, setFile] = useState<string>('')
 
 
     const onSubmit: SubmitHandler<IPicture> = async (picture: IPicture) => {
@@ -32,7 +33,7 @@ export const UserImage: FC = () => {
             if (data) setAvatar(URL.createObjectURL(data))
         }
         if (!avatar) getAvatarFromServer()
-    })
+    },[file])
 
     return (
         <>
@@ -41,18 +42,29 @@ export const UserImage: FC = () => {
                     ?
                     <div className="flex flex-col gap-6 relative">
                         <img width={500} height={500} src={avatar} alt="Фото пользователя" />
-
                         <form className="bottom-1 left-1" method="post" encType="multipart/form-data" onSubmit={handleSubmit(onSubmit)}>
-                            <input {...register('picture')} type='file' accept='image/*' name='picture' className='input-file-primary'/>
-                            <button className="btn-primary">Изменить</button>
+                            <input {...register('picture')} onChange={(e) => setFile(e.target.value)} type='file' accept='image/*' name='picture' className='input-file-primary'/>
+                            {
+                                file 
+                                ?
+                                <button className="btn-primary">Изменить</button>
+                                :
+                                null
+                            }
                         </form>
                     </div>
                     :
                     <div className="flex flex-col gap-6 relative">
                         <img width={500} height={500} className="relative" src={imgUser} alt="Фото пользователя" />
                         <form className="bottom-1 left-1" method="post" encType="multipart/form-data" onSubmit={handleSubmit(onSubmit)}>
-                            <input {...register('picture')} type='file' accept='image/*' name='picture' className='text-2xl w-2/3' />
-                            <button className="btn-primary">Изменить</button>
+                            <input {...register('picture')} onChange={(e) => setFile(e.target.value)} type='file' accept='image/*' name='picture' className='text-2xl w-2/3' />
+                            {
+                                file 
+                                ?
+                                <button className="btn-primary">Изменить</button>
+                                :
+                                null
+                            }
                         </form>
                     </div>
                 }

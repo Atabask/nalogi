@@ -9,7 +9,7 @@
         "@components/*": ["./src/components/*"],
         "@hooks/*": ["./src/hooks/*"],
         "@store/*": ["./src/store/*"],
-        "@generated-types": ["./generated-types"],
+        "@generated-types": ["./generated-types"]
       }
     }
   }
