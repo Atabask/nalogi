@@ -38,21 +38,21 @@ export const UserData: FC<IProps> = ({ profile }: IProps) => {
 
     return (
         <>
-            <div className='container flex gap-6'>
+            <div className='flex gap-24'>
                 <UserImage />
-                <div className="flex flex-col gap-6 ">
-                    <h2 className='text-3xl'>Имя: {profile.user_name}</h2>
-                    <h2 className='text-3xl'>Телефон: {profile.phone}</h2>
-                    <h2 className='text-3xl'>Адрес: {profile.adress}</h2>
-                    <button onClick={() => setModalActive(true)} className="btn-primary w-60">Редактировать</button>
+                <div className="flex flex-col gap-6">
+                    <h2 className='text-xl'>Имя: {profile.user_name}</h2>
+                    <h2 className='text-xl'>Телефон: {profile.phone}</h2>
+                    <h2 className='text-xl'>Адрес: {profile.adress}</h2>
+                    <button onClick={() => setModalActive(true)} className="btn-primary w-52">Редактировать</button>
                 </div>
                 <Modal active={modalActive} setActive={setModalActive}>
-                    <h1 className='text-6xl m-12'>Редактирование</h1>
+                    <h1 className='text-4xl m-8'>Редактирование</h1>
                     <form method="POST" onSubmit={handleSubmit(onSubmit)} className='form-primary w-full'>
                         <input {...register("username")} className="input-primary w-full" defaultValue={profile.user_name} type="text"/>
                         <input {...register("adress")} className="input-primary w-full" defaultValue={profile.adress} type="text"/>
                         <input {...register("phone")} className="input-primary w-full" defaultValue={profile.phone} type="tel"/>
-                        <button type='submit' className="btn-primary w-60 shadow-md">Обновить</button>
+                        <button type='submit' className="btn-primary w-52 shadow-md">Обновить</button>
                     </form>
                 </Modal>
             </div>

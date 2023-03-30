@@ -48,32 +48,32 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
     }
 
     return (
-        <div className='w-4/5 flex flex-col content-center flex-wrap m-auto gap-8 p-10'>
+        <div className='w-11/12 flex flex-col content-center flex-wrap m-auto gap-6 p-8'>
             {
                 !user ?
-                    <h1 className='text-6xl p-8 text-center'>Ввойдите в аккаунт</h1>
+                    <h1 className='text-5xl p-6 text-center'>Ввойдите в аккаунт</h1>
                     :
                     <>
-                        <h1 className='text-6xl p-8 text-center'>Показания {user?.email}</h1>
-                        <div className='flex gap-5 w-full justify-around'>
+                        <h1 className='text-5xl p-6 text-center'>Показания {user?.email}</h1>
+                        <div className='flex gap-4 w-full justify-around'>
                             <form method='POST' onSubmit={handleSubmit(onSubmit)} className='form-primary w-1/4'>
-                                <h1 className='text-4xl '>Для сохранения показаний</h1>
-                                <input className='input-primary' defaultValue={year} readOnly {...register("year")} />
-                                <select {...register("month")} required className='text-2xl p-5 rounded-lg border-2 '>
-                                    <option className='text-2xl'>Январь</option>
-                                    <option className='text-2xl'>Февраль</option>
-                                    <option className='text-2xl'>Март</option>
-                                    <option className='text-2xl'>Апрель</option>
-                                    <option className='text-2xl'>Май</option>
-                                    <option className='text-2xl'>Июнь</option>
-                                    <option className='text-2xl'>Июль</option>
-                                    <option className='text-2xl'>Август</option>
-                                    <option className='text-2xl'>Сентябрь</option>
-                                    <option className='text-2xl'>Октябрь</option>
-                                    <option className='text-2xl'>Ноябрь</option>
-                                    <option className='text-2xl'>Декабрь</option>
+                                <h1 className='text-3xl '>Для сохранения показаний</h1>
+                                <input className='input-primary w-10/12' defaultValue={year} readOnly {...register("year")} />
+                                <select {...register("month")} required className='text-xl p-3 rounded-lg border-2 w-10/12'>
+                                    <option className='text-xl'>Январь</option>
+                                    <option className='text-xl'>Февраль</option>
+                                    <option className='text-xl'>Март</option>
+                                    <option className='text-xl'>Апрель</option>
+                                    <option className='text-xl'>Май</option>
+                                    <option className='text-xl'>Июнь</option>
+                                    <option className='text-xl'>Июль</option>
+                                    <option className='text-xl'>Август</option>
+                                    <option className='text-xl'>Сентябрь</option>
+                                    <option className='text-xl'>Октябрь</option>
+                                    <option className='text-xl'>Ноябрь</option>
+                                    <option className='text-xl'>Декабрь</option>
                                 </select>
-                                <div className='flex relative'>
+                                <div className='flex relative w-10/12'>
                                     <input  {...register("electro")} required className='input-primary w-full' type='text' placeholder='Электричество' />
                                     {
                                         !dataState.length ?
@@ -82,7 +82,7 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                                             <img className='icon-data-primary' src={imgElectroColor} alt="#" />
                                     }
                                 </div>
-                                <div className='flex relative'>
+                                <div className='flex relative w-10/12'>
                                     <input {...register("hotWater")} required className='input-primary w-full' type='text' placeholder='Горячая вода' />
                                     {
                                         !dataState.length ?
@@ -91,7 +91,7 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                                             <img className='icon-data-primary' src={imgHotWaterColor} alt="#" />
                                     }
                                 </div>
-                                <div className='flex relative'>
+                                <div className='flex relative w-10/12'>
                                     <input {...register("coldWater")} required className='input-primary w-full' type='text' placeholder='Холодная вода' />
                                     {
                                         !dataState.length ?
@@ -106,7 +106,7 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                                         !dataState.length ?
                                             null
                                             :
-                                            <img className='w-10 h-10' src={imgCheckMark} alt="#" />
+                                            <img className='w-8 h-8' src={imgCheckMark} alt="#" />
                                     }
                                 </div>
                             </form>

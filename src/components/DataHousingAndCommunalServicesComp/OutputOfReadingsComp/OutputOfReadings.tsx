@@ -24,7 +24,7 @@ export const OutputOfReadingsComp: React.FC = () => {
     }, [])
 
     return (
-        <div className='container'>
+        <>
             {
                 currentData.length === 0
                     ?
@@ -32,7 +32,7 @@ export const OutputOfReadingsComp: React.FC = () => {
                     :
                     <PieComponent currentData={currentData} />
             }
-        </div>
+        </>
     )
 
 }

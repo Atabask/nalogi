@@ -4,9 +4,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    container: {
-      center: true,
-    },
+    screens:{
+      '@media340': '340px'
+    }
 
   },
   plugins: [],

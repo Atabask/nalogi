@@ -35,8 +35,8 @@ export const UserComp: FC = () => {
     }
 
     return (
-        <div className='container flex flex-col items-center'>
-            <h1 className='text-5xl m-14'>Данные аккаунта {user?.email}</h1>
+        <div className='flex flex-col items-center w-11/12 m-auto'>
+            <h1 className='text-4xl m-10'>Данные аккаунта {user?.email}</h1>
             
             {profileData && (
                 <div>
@@ -49,7 +49,7 @@ export const UserComp: FC = () => {
                 user
                     ?
                     <button 
-                    className='btn-primary w-60 m-11' 
+                    className='btn-primary w-60 m-10' 
                     onClick={() => signOut()}>Выйти</button>
                     :
                     null

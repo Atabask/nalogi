@@ -26,7 +26,7 @@ export const HistoryComp: FC = () => {
 
     return (
         <div className='flex flex-col justify-items-start m-auto w-9/12'>
-            <h1 className='text-5xl m-14 text-center'>История показаний</h1>
+            <h1 className='text-4xl m-14 text-center'>История показаний</h1>
             { dataCommunalService && (
                 <div className='flex flex-wrap gap-10'>
                     {dataCommunalService.map(data => (

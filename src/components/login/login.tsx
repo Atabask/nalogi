@@ -27,15 +27,15 @@ export const Login: FC = () => {
     })
 
     return (
-        <div className="container flex flex-col items-center m-auto">
+        <div className="flex flex-col items-center m-auto">
             <h1>test1111@mail.ru <br /> 12345678</h1>
-            <h1 className="text-6xl m-14" >Вход</h1>
+            <h1 className="text-5xl m-10">Вход</h1>
             <form onSubmit={handleSubmit(onSubmit)} className='form-primary items-center w-1/2'>
-                <input {...register('email')} className="input-primary w-2/3" type="email" placeholder='Email' />
-                <input {...register('password')} className="input-primary w-2/3" type="password" placeholder='Пароль' />
-                <button className="btn-primary">Войти</button>
+                <input {...register('email')} className="input-primary w-5/12" type="email" placeholder='Email' />
+                <input {...register('password')} className="input-primary w-5/12" type="password" placeholder='Пароль' />
+                <button className="btn-primary w-60">Войти</button>
             </form>
-            <button onClick={() => navigate('/registration')} className="btn-primary w-60 mt-9">Нет аккаунта?</button>
+            <button onClick={() => navigate('/registration')} className="btn-primary w-60 mt-8">Нет аккаунта?</button>
         </div>
     )
 }

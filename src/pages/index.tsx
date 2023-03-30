@@ -1,0 +1,6 @@
+export * from './404page'
+export * from './CalculatePage'
+export * from './DataHousingAndCommunalServices'
+export * from './History'
+export * from './HomePage'
+export * from './Profile'

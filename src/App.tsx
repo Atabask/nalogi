@@ -3,12 +3,15 @@ import { Routes, Route } from 'react-router-dom';
 import { Registration } from '@components/Registration/Registration';
 import { Login } from '@components/Login/login';
 import { Navigation } from '@components/Navigation/navigation';
-import { Page404 } from './pages/404page';
-import { DataHousingAndCommunalServices } from './pages/DataHousingAndCommunalServices';
-import { HomePage } from './pages/HomePage';
-import { HistoryPage } from './pages/History';
-import { User } from './pages/Profile';
-import { Calculate } from './pages/CalculatePage';
+import { 
+  Page404, 
+  DataHousingAndCommunalServices,
+  HomePage,
+  HistoryPage,
+  User,
+  Calculate
+} from '@pages/index';
+
 
 
 function App() {

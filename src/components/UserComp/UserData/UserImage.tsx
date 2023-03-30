@@ -40,8 +40,8 @@ export const UserImage: FC = () => {
             <div>
                 {avatar
                     ?
-                    <div className="flex flex-col gap-6 relative">
-                        <img width={500} height={500} src={avatar} alt="Фото пользователя" />
+                    <div className="flex flex-col gap-6 relative w-full">
+                        <img width={600} height={600} src={avatar} alt="Фото пользователя" />
                         <form className="bottom-1 left-1" method="post" encType="multipart/form-data" onSubmit={handleSubmit(onSubmit)}>
                             <input {...register('picture')} onChange={(e) => setFile(e.target.value)} type='file' accept='image/*' name='picture' className='input-file-primary'/>
                             {

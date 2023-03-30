@@ -46,15 +46,15 @@ export const Registration: FC = () => {
     })
 
     return (
-        <div className='container flex flex-col items-center'>
-            <h1 className='text-6xl m-12'>Регистрация</h1>
+        <div className='flex flex-col items-center'>
+            <h1 className='text-5xl m-10'>Регистрация</h1>
             <form onSubmit={handleSubmit(onSubmit)} className='form-primary items-center w-1/2'>
-                <input {...register("username")} className="input-primary w-2/3" placeholder='Введите имя и фамилию' type="text" />
-                <input {...register("email")} className="input-primary w-2/3" placeholder='Введите Email' type="email" />
-                <input {...register("password")} className="input-primary w-2/3" placeholder='Введите пароль' type="password" />
-                <input {...register("adress")} className="input-primary w-2/3" placeholder='Введите адрeс' type="text" />
-                <input {...register("phone")} className="input-primary w-2/3" placeholder='Введите номер телефона' type="tel" />
-                <button type='submit' className="btn-primary">Регистрация</button>
+                <input {...register("username")} className="input-primary w-5/12" placeholder='Введите имя и фамилию' type="text" />
+                <input {...register("email")} className="input-primary w-5/12" placeholder='Введите Email' type="email" />
+                <input {...register("password")} className="input-primary w-5/12" placeholder='Введите пароль' type="password" />
+                <input {...register("adress")} className="input-primary w-5/12" placeholder='Введите адрeс' type="text" />
+                <input {...register("phone")} className="input-primary w-5/12" placeholder='Введите номер телефона' type="tel" />
+                <button type='submit' className="btn-primary w-60">Регистрация</button>
             </form>
         </div>
     )

@@ -30,24 +30,33 @@
 
 @layer components {
   .btn-primary {
-    @apply border-2 p-4 rounded-lg hover:bg-sky-200 duration-200 text-2xl
+    @apply border-2 p-3 rounded-lg hover:bg-sky-200 duration-200 text-xl
   }
   .input-primary {
-    @apply p-5 text-2xl rounded-lg border-2
+    @apply p-3 text-xl rounded-lg border-2
   }
   .form-primary {
-    @apply flex flex-col gap-8
+    @apply flex flex-col gap-6 items-center
   }
   .link-primary {
-    @apply text-3xl hover:scale-125 duration-300
+    @apply text-2xl hover:scale-125 duration-300
+  }
+  .link-primary-main {
+    @apply text-5xl hover:scale-125 duration-300
   }
   .p-primary {
-    @apply p-2 text-center text-5xl leading-loose
+    @apply p-2 text-center text-3xl leading-loose
   }
   .icon-data-primary {
-    @apply w-10 h-10 right-2 inset-y-4 absolute
+    @apply w-8 h-8 right-2 inset-y-3 absolute
   }
   .input-file-primary {
-    @apply file:border-2 file:rounded-lg hover:file:bg-sky-200 file:p-4 file:duration-200 file:text-2xl file:bg-inherit
+    @apply file:border-2 file:rounded-lg hover:file:bg-sky-200 file:p-2 file:duration-200 file:text-xl file:bg-inherit
+  }
+  .media340-p-primary {
+    @apply @media340:text-2xl 
+  }
+  .media340-nav {
+    @apply @media340:flex-col h-screen
   }
 }

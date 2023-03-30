@@ -17,9 +17,9 @@ export const Navigation: FC = () => {
 
     return (
         <>
-            <nav className='m-full h-32 bg-sky-200 flex justify-between items-center px-14 '>
-                <Link to="/" className='text-6xl hover:scale-125 duration-300'>НалогиЖКУ</Link>
-                <div className='flex gap-12'>
+            <nav className=' m-full h-24 bg-sky-200 flex justify-between items-center px-14 '>
+                <Link to="/" className='text-5xl hover:scale-125 duration-300'>НалогиЖКУ</Link>
+                <div className=' flex gap-12 '>
                     {
                         user
                             ?
@@ -37,7 +37,7 @@ export const Navigation: FC = () => {
                         <>
                             <Link to="/user" className='link-primary'>{user?.email}</Link>
                             <button className='hover:scale-125 duration-300' onClick={signOut}>
-                                <img className='w-10 h-10' src={logoutImg} alt='#' />
+                                <img className='w-8 h-8' src={logoutImg} alt='#' />
                             </button>
                         </>
                     }
