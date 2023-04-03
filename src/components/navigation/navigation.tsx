@@ -17,7 +17,7 @@ export const Navigation: FC = () => {
 
     return (
         <>
-            <nav className=' @media340:nav-conteiner-340'>
+            <nav className=' @media340:nav-conteiner-340 nav'>
                 <Link to="/" className='@media340:link-primary-340 link-primary text-5xl'>НалогиЖКУ</Link>
                 <div className='@media340:flex-col  flex gap-10'>
                     {

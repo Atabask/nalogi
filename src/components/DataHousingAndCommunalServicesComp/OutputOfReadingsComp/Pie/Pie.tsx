@@ -7,9 +7,10 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface IProps {
     currentData: number[];
+    currentMonth: string;
 }
 
-export const PieComponent: FC<IProps> = ({currentData}) => {
+export const PieComponent: FC<IProps> = ({currentData, currentMonth}) => {
     
     const [month, setMonth] = useState<string>('')
 
@@ -22,10 +23,12 @@ export const PieComponent: FC<IProps> = ({currentData}) => {
             const stringMonth = lastMonth?.month
             setMonth(stringMonth)
         }
-        if(month.length === 0) {
+        if(currentMonth) {
+            setMonth(currentMonth)
+        } else {
             getMonthSupabases()
         }
-    })
+    }, [currentMonth])
 
     const dataPieRender = {
         labels: ['Электричество', 'Холодная вода', 'Горячая вода'],
@@ -45,6 +48,7 @@ export const PieComponent: FC<IProps> = ({currentData}) => {
                 ],
                 borderWidth: 2,
                 borderRadius: 4,
+                radius: 200
             },
         ],
     };
@@ -53,10 +57,7 @@ export const PieComponent: FC<IProps> = ({currentData}) => {
     return (
         <>
             <h1 className="text-3xl text-center mb-2">Показания за {month}</h1>
-            <Pie className='mt-5 w-2/5 @media340:w-3/5' data={dataPieRender} />
+            <Pie className='mt-2 @media340:w-3/5' data={dataPieRender} />
         </>
     )
 }
-
-
-// height={550} width={550}

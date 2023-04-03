@@ -43,8 +43,6 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                     user_id: user?.id
                 }
             ])
-        window.location.reload()
-
     }
 
     return (
@@ -106,12 +104,12 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                                         !dataState.length ?
                                             null
                                             :
-                                            <img className='w-8 h-8' src={imgCheckMark} alt="#" />
+                                            <img className='w-8 h-8' src={imgCheckMark} alt="#"/>
                                     }
                                 </div>
                             </form>
 
-                            <div className='flex flex-col flex-wrap items-center'>
+                            <div className='w-1/4 flex flex-col flex-wrap items-center'>
                                 <OutputOfReadingsComp />
                             </div>
                         </div>
