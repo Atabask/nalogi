@@ -36,7 +36,7 @@ export const UserComp: FC = () => {
 
     return (
         <div className='flex flex-col items-center w-11/12 m-auto'>
-            <h1 className='text-4xl m-10'>Данные аккаунта {user?.email}</h1>
+            <h1 className='@media340:p-primary-340 text-4xl m-10'><b>Данные аккаунта {user?.email}</b></h1>
             
             {profileData && (
                 <div>

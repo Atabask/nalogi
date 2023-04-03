@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     screens:{
-      '@media340': '340px'
+      '@media340': { 'max': '680px' }
     }
 
   },

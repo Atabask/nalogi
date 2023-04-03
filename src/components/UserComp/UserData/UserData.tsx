@@ -38,12 +38,12 @@ export const UserData: FC<IProps> = ({ profile }: IProps) => {
 
     return (
         <>
-            <div className='flex gap-24'>
+            <div className='@media340:flex-col-reverse flex gap-20'>
                 <UserImage />
-                <div className="flex flex-col gap-6">
+                <div className="@media340:items-center flex flex-col gap-6">
                     <h2 className='text-xl'>Имя: {profile.user_name}</h2>
                     <h2 className='text-xl'>Телефон: {profile.phone}</h2>
-                    <h2 className='text-xl'>Адрес: {profile.adress}</h2>
+                    <h2 className='@media340:text-center text-xl'>Адрес: {profile.adress}</h2>
                     <button onClick={() => setModalActive(true)} className="btn-primary w-52">Редактировать</button>
                 </div>
                 <Modal active={modalActive} setActive={setModalActive}>

@@ -33,30 +33,57 @@
     @apply border-2 p-3 rounded-lg hover:bg-sky-200 duration-200 text-xl
   }
   .input-primary {
-    @apply p-3 text-xl rounded-lg border-2
+    @apply p-3 text-xl rounded-lg border-2 
+  }
+  .input-primary-340 {
+    @apply p-2 text-xl rounded-lg border-2
   }
   .form-primary {
     @apply flex flex-col gap-6 items-center
   }
   .link-primary {
-    @apply text-2xl hover:scale-125 duration-300
+    @apply hover:scale-125 duration-300
   }
-  .link-primary-main {
-    @apply text-5xl hover:scale-125 duration-300
+  .link-primary-340 {
+    @apply hover:scale-105 
   }
   .p-primary {
     @apply p-2 text-center text-3xl leading-loose
   }
+  .p-primary-340 {
+    @apply p-2 text-center text-xl leading-relaxed
+  }
   .icon-data-primary {
     @apply w-8 h-8 right-2 inset-y-3 absolute
+  }
+  .icon-data-primary-340 {
+    @apply w-7 h-7 right-2 inset-y-3 absolute
   }
   .input-file-primary {
     @apply file:border-2 file:rounded-lg hover:file:bg-sky-200 file:p-2 file:duration-200 file:text-xl file:bg-inherit
   }
-  .media340-p-primary {
-    @apply @media340:text-2xl 
+  .nav {
+    @apply h-24 bg-sky-200 flex justify-between items-center px-14
   }
-  .media340-nav {
-    @apply @media340:flex-col h-screen
+  .nav-conteiner-340 {
+    @apply flex flex-col justify-evenly gap-4 p-4 bg-sky-200 w-full h-4/6
+  }
+  .header {
+    @apply text-5xl p-6
+  }
+  .header-340 {
+    @apply text-4xl p-2 m-2
+  }
+  .container-data-communal-services {
+    @apply flex-col items-center content-center flex-wrap m-auto gap-6 p-8
+  }
+  .container-data-communal-services-340 {
+    @apply p-4 gap-2 items-center
+  }
+  .form-data-communal-services {
+    @apply flex gap-4 w-full justify-around
+  }
+  .form-data-communal-services-340 {
+    @apply flex-col items-center gap-8
   }
 }

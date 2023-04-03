@@ -48,18 +48,18 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
     }
 
     return (
-        <div className='w-11/12 flex flex-col content-center flex-wrap m-auto gap-6 p-8'>
+        <div className='@media340:container-data-communal-services-340 container-data-communal-services'>
             {
                 !user ?
-                    <h1 className='text-5xl p-6 text-center'>Ввойдите в аккаунт</h1>
+                    <h1 className='@media340:header-340 header text-center'>Ввойдите в аккаунт</h1>
                     :
                     <>
-                        <h1 className='text-5xl p-6 text-center'>Показания {user?.email}</h1>
-                        <div className='flex gap-4 w-full justify-around'>
-                            <form method='POST' onSubmit={handleSubmit(onSubmit)} className='form-primary w-1/4'>
-                                <h1 className='text-3xl '>Для сохранения показаний</h1>
-                                <input className='input-primary w-10/12' defaultValue={year} readOnly {...register("year")} />
-                                <select {...register("month")} required className='text-xl p-3 rounded-lg border-2 w-10/12'>
+                        <h1 className='@media340:text-3xl header text-center'>Показания {user?.email}</h1>
+                        <div className='@media340:form-data-communal-services-340 form-data-communal-services'>
+                            <form method='POST' onSubmit={handleSubmit(onSubmit)} className='@media340:w-11/12 form-primary w-1/4'>
+                                <h1 className='@media340:p-primary-340 text-3xl '>Для сохранения показаний</h1>
+                                <input className='@media340:input-primary-340 input-primary w-10/12' defaultValue={year} readOnly {...register("year")} />
+                                <select {...register("month")} required className='@media340:input-primary-340 text-xl p-3 rounded-lg border-2 w-10/12'>
                                     <option className='text-xl'>Январь</option>
                                     <option className='text-xl'>Февраль</option>
                                     <option className='text-xl'>Март</option>
@@ -74,30 +74,30 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                                     <option className='text-xl'>Декабрь</option>
                                 </select>
                                 <div className='flex relative w-10/12'>
-                                    <input  {...register("electro")} required className='input-primary w-full' type='text' placeholder='Электричество' />
+                                    <input  {...register("electro")} required className='@media340:input-primary-340 input-primary w-full' type='text' placeholder='Электричество' />
                                     {
                                         !dataState.length ?
-                                            <img className='icon-data-primary' src={imgElectroBlack} alt="#" />
+                                            <img className='@media340:icon-data-primary-340 icon-data-primary' src={imgElectroBlack} alt="#" />
                                             :
-                                            <img className='icon-data-primary' src={imgElectroColor} alt="#" />
+                                            <img className='@media340:icon-data-primary-340 icon-data-primary' src={imgElectroColor} alt="#" />
                                     }
                                 </div>
                                 <div className='flex relative w-10/12'>
-                                    <input {...register("hotWater")} required className='input-primary w-full' type='text' placeholder='Горячая вода' />
+                                    <input {...register("hotWater")} required className='@media340:input-primary-340 input-primary w-full' type='text' placeholder='Горячая вода' />
                                     {
                                         !dataState.length ?
-                                            <img className='icon-data-primary' src={imgHotWaterBlack} alt="#" />
+                                            <img className='@media340:icon-data-primary-340 icon-data-primary' src={imgHotWaterBlack} alt="#" />
                                             :
-                                            <img className='icon-data-primary' src={imgHotWaterColor} alt="#" />
+                                            <img className='@media340:icon-data-primary-340 icon-data-primary' src={imgHotWaterColor} alt="#" />
                                     }
                                 </div>
                                 <div className='flex relative w-10/12'>
-                                    <input {...register("coldWater")} required className='input-primary w-full' type='text' placeholder='Холодная вода' />
+                                    <input {...register("coldWater")} required className='@media340:input-primary-340 input-primary w-full' type='text' placeholder='Холодная вода' />
                                     {
                                         !dataState.length ?
-                                            <img className='icon-data-primary' src={imgColdWaterBlack} alt="#" />
+                                            <img className='@media340:icon-data-primary-340 icon-data-primary' src={imgColdWaterBlack} alt="#" />
                                             :
-                                            <img className='icon-data-primary' src={imgColdWaterColor} alt="#" />
+                                            <img className='@media340:icon-data-primary-340 icon-data-primary' src={imgColdWaterColor} alt="#" />
                                     }
                                 </div>
                                 <div className='flex gap-6 items-center'>

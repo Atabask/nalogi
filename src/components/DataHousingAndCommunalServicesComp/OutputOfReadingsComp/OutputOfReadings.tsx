@@ -3,7 +3,7 @@ import supabase from '@supabaseClient';
 import { PieComponent } from './Pie/Pie';
 
 
-export const OutputOfReadingsComp: React.FC = () => {
+export const OutputOfReadingsComp: FC = () => {
 
     const [currentData, setCurrentData] = useState<number[]>([])
 
@@ -28,7 +28,7 @@ export const OutputOfReadingsComp: React.FC = () => {
             {
                 currentData.length === 0
                     ?
-                    <div>Данных нет</div>
+                    <div className='header'>Данных нет</div>
                     :
                     <PieComponent currentData={currentData} />
             }

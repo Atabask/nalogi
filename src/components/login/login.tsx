@@ -30,9 +30,9 @@ export const Login: FC = () => {
         <div className="flex flex-col items-center m-auto">
             <h1>test1111@mail.ru <br /> 12345678</h1>
             <h1 className="text-5xl m-10">Вход</h1>
-            <form onSubmit={handleSubmit(onSubmit)} className='form-primary items-center w-1/2'>
-                <input {...register('email')} className="input-primary w-5/12" type="email" placeholder='Email' />
-                <input {...register('password')} className="input-primary w-5/12" type="password" placeholder='Пароль' />
+            <form onSubmit={handleSubmit(onSubmit)} className='@media340:w-2/3 form-primary items-center w-1/2'>
+                <input {...register('email')} className="@media340:input-primary-340 @media340:w-11/12 input-primary w-5/12" type="email" placeholder='Email' />
+                <input {...register('password')} className="@media340:input-primary-340 @media340:w-11/12 input-primary w-5/12" type="password" placeholder='Пароль' />
                 <button className="btn-primary w-60">Войти</button>
             </form>
             <button onClick={() => navigate('/registration')} className="btn-primary w-60 mt-8">Нет аккаунта?</button>

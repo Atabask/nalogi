@@ -53,7 +53,10 @@ export const PieComponent: FC<IProps> = ({currentData}) => {
     return (
         <>
             <h1 className="text-3xl text-center mb-2">Показания за {month}</h1>
-            <Pie className='mt-5' height={550} width={550} data={dataPieRender} />
+            <Pie className='mt-5 w-2/5 @media340:w-3/5' data={dataPieRender} />
         </>
     )
 }
+
+
+// height={550} width={550}

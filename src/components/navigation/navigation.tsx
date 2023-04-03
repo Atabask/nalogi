@@ -17,26 +17,26 @@ export const Navigation: FC = () => {
 
     return (
         <>
-            <nav className=' m-full h-24 bg-sky-200 flex justify-between items-center px-14 '>
-                <Link to="/" className='text-5xl hover:scale-125 duration-300'>НалогиЖКУ</Link>
-                <div className=' flex gap-12 '>
+            <nav className=' @media340:nav-conteiner-340'>
+                <Link to="/" className='@media340:link-primary-340 link-primary text-5xl'>НалогиЖКУ</Link>
+                <div className='@media340:flex-col  flex gap-10'>
                     {
                         user
                             ?
                             <>
-                                <Link to="/history" className='link-primary'>История</Link>
-                                <Link to="/data" className='link-primary'>Показания</Link>
+                                <Link to="/history" className='@media340:link-primary-340 link-primary text-2xl'>История</Link>
+                                <Link to="/data" className='@media340:link-primary-340 link-primary text-2xl'>Показания</Link>
                             </>
                             :
                             null
                     }
-                    <Link to="/calculate" className='link-primary'>Расчет</Link>
+                    <Link to="/calculate" className='@media340:link-primary-340 link-primary text-2xl '>Расчет</Link>
                     {!user ?
-                        <Link to="/login" className='link-primary'>Вход в аккаунт</Link>
+                        <Link to="/login" className='@media340:link-primary-340 link-primary text-2xl '>Вход в аккаунт</Link>
                         :
                         <>
-                            <Link to="/user" className='link-primary'>{user?.email}</Link>
-                            <button className='hover:scale-125 duration-300' onClick={signOut}>
+                            <Link to="/user" className='@media340:link-primary-340 link-primary text-2xl'>{user?.email}</Link>
+                            <button className='@media340:link-primary-340link-primary' onClick={signOut}>
                                 <img className='w-8 h-8' src={logoutImg} alt='#' />
                             </button>
                         </>
