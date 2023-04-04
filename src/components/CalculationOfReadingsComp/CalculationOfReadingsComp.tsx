@@ -35,7 +35,7 @@ export const CalculationOfReadingsComp: FC = () => {
             <p className='@media340:p-primary-340 p-primary'>Для полей ввода использовать цифры. В качестве разделителя использовать "."</p>
             <p className='@media340:p-primary-340 p-primary'>ИПУ - индивидуальный прибор учета</p>
             <div className='flex flex-col gap-4'>
-                <div className='flex'>
+                <div className='flex @media340:flex-col'>
                     <div className='flex flex-col gap-4'>
                         <input className='@media340:input-primary-340 w-60 input-primary' onChange={handleChangeAmount} type='text' placeholder='Данные с ИПУ' value={amount} />
                         <input className='@media340:input-primary-340 w-60 input-primary' onChange={handleChangeRate} type='text' placeholder='Тариф' value={rate} />

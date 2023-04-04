@@ -48,7 +48,7 @@ export const PieComponent: FC<IProps> = ({currentData, currentMonth}) => {
                 ],
                 borderWidth: 2,
                 borderRadius: 4,
-                radius: 200
+                radius: 140
             },
         ],
     };
@@ -57,7 +57,7 @@ export const PieComponent: FC<IProps> = ({currentData, currentMonth}) => {
     return (
         <>
             <h1 className="text-3xl text-center mb-2">Показания за {month}</h1>
-            <Pie className='mt-2 @media340:w-3/5' data={dataPieRender} />
+            <Pie className='mt-2' width={500} height={500} data={dataPieRender} />
         </>
     )
 }

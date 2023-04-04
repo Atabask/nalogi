@@ -109,7 +109,7 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                                 </div>
                             </form>
 
-                            <div className='w-1/4 flex flex-col flex-wrap items-center'>
+                            <div className='@media340:w-full w-1/4 flex flex-col flex-wrap items-center'>
                                 <OutputOfReadingsComp />
                             </div>
                         </div>

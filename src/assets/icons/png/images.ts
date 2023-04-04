@@ -9,6 +9,7 @@ import imgColdWaterColor from './coldWaterColor.png';
 import imgHotWaterBlack from './hotWaterBlack.png';
 import imgHotWaterColor from './hotWaterColor.png';
 import imgCheckMark from './checkMark.png';
+import imgDelete from './delete.png';
 
 
 export {
@@ -22,5 +23,6 @@ export {
     imgColdWaterColor,
     imgHotWaterBlack,
     imgHotWaterColor,
-    imgCheckMark
+    imgCheckMark,
+    imgDelete
 }

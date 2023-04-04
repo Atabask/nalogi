@@ -21,16 +21,16 @@ export const HistoryComp: FC = () => {
             }
         }
         getHistoryDataCommunalService()
-    }, [])
+    }, [dataCommunalService])
     
 
     return (
         <div className='flex flex-col justify-items-start m-auto w-9/12'>
             <h1 className='@media340:text-3xl @media340:m-4 text-4xl m-14 text-center'>История показаний</h1>
             { dataCommunalService && (
-                <div className='flex flex-wrap gap-10'>
+                <div className='flex flex-wrap gap-10 justify-around'>
                     {dataCommunalService.map(data => (
-                        <HistoryCard key={data.id} data={data}/>
+                        <HistoryCard key={data.id} dataFromSupabase={data}/>
                     ))}
                 </div>
             ) }
