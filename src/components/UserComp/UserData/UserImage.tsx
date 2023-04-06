@@ -41,7 +41,7 @@ export const UserImage: FC = () => {
                 {avatar
                     ?
                     <div className="flex flex-col gap-6 relative w-full">
-                        <img width={600} height={600} src={avatar} alt="Фото пользователя" />
+                        <img width={400} height={400} src={avatar} alt="Фото пользователя" />
                         <form className="bottom-1 left-1" method="post" encType="multipart/form-data" onSubmit={handleSubmit(onSubmit)}>
                             <input {...register('picture')} onChange={(e) => setFile(e.target.value)} type='file' accept='image/*' name='picture' className='input-file-primary'/>
                             {
@@ -55,7 +55,7 @@ export const UserImage: FC = () => {
                     </div>
                     :
                     <div className="flex flex-col gap-6 relative">
-                        <img width={500} height={500} className="relative" src={imgUser} alt="Фото пользователя" />
+                        <img width={400} height={400} className="relative" src={imgUser} alt="Фото пользователя" />
                         <form className="bottom-1 left-1" method="post" encType="multipart/form-data" onSubmit={handleSubmit(onSubmit)}>
                             <input {...register('picture')} onChange={(e) => setFile(e.target.value)} type='file' accept='image/*' name='picture' className='text-2xl w-2/3' />
                             {

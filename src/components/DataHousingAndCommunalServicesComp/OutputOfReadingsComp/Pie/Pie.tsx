@@ -10,20 +10,22 @@ interface IProps {
     currentMonth: string;
 }
 
-export const PieComponent: FC<IProps> = ({currentData, currentMonth}) => {
-    
+export const PieComponent: FC<IProps> = ({ currentData, currentMonth }) => {
+
     const [month, setMonth] = useState<string>('')
 
     useEffect(() => {
         const getMonthSupabases = async () => {
+            const { data: { user } } = await supabase.auth.getUser()
             const { data: communal_service, error } = await supabase
                 .from('communal_service')
                 .select('month')
+                .eq('user_id', user?.id)
             const lastMonth = (communal_service?.at(-1))
             const stringMonth = lastMonth?.month
             setMonth(stringMonth)
         }
-        if(currentMonth) {
+        if (currentMonth) {
             setMonth(currentMonth)
         } else {
             getMonthSupabases()
@@ -52,12 +54,21 @@ export const PieComponent: FC<IProps> = ({currentData, currentMonth}) => {
             },
         ],
     };
-    
+
 
     return (
         <>
-            <h1 className="text-3xl text-center mb-2">Показания за {month}</h1>
-            <Pie className='mt-2' width={500} height={500} data={dataPieRender} />
+            {
+                month
+                    ?
+                    <>
+                        <h1 className="text-3xl text-center mb-2">Показания за {month}</h1>
+                        <Pie className='mt-2' width={500} height={500} data={dataPieRender} />
+                    </>
+                    :
+                    <h1 className="header @media340:header-340">Введите показания для отображения</h1>
+
+            }
         </>
     )
 }

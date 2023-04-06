@@ -43,6 +43,7 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                     user_id: user?.id
                 }
             ])
+            if (error) throw error
     }
 
     return (
