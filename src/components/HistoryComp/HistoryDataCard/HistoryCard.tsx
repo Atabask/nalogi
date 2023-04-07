@@ -3,7 +3,6 @@ import { IGetHistory } from '@interfaces';
 import { Modal } from '@components/modal/Modal';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import supabase from '@supabaseClient';
-import { useUser } from '@supabase/auth-helpers-react';
 import { editImg, imgDelete } from '@icons';
 
 
@@ -15,14 +14,12 @@ export const HistoryCard: FC<IProps> = ({ dataFromSupabase }: IProps) => {
 
     const [modalActive, setModalActive] = useState<boolean>(false)
     const { register, handleSubmit } = useForm()
-    const user = useUser()
 
     const date = new Date()
     const year = date.getFullYear()
 
     const onSubmit: SubmitHandler<FieldValues> = editData => {
         const updateProfile = async () => {
-            try {
                 const { data, error } = await supabase
                     .from('communal_service')
                     .update({
@@ -33,10 +30,8 @@ export const HistoryCard: FC<IProps> = ({ dataFromSupabase }: IProps) => {
                         hot_water: editData?.hotWater,
                     })
                     .eq('id', dataFromSupabase.id)
-                window.location.reload()
-            } catch (err) {
-                throw err
-            }
+                    window.location.reload()
+                    if(error) throw error
         }
         updateProfile()
         setModalActive(false)
@@ -47,6 +42,8 @@ export const HistoryCard: FC<IProps> = ({ dataFromSupabase }: IProps) => {
         .from('communal_service')
         .delete()
         .eq('id', dataFromSupabase.id)
+
+        if(error) throw error
     }
 
     return (

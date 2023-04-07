@@ -16,6 +16,7 @@ export const Login: FC = () => {
                 email: dataLogin.email,
                 password: dataLogin.password,
             })
+            if(error) throw error
         }
         login()
     }

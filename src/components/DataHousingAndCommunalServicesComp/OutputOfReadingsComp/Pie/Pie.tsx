@@ -24,6 +24,7 @@ export const PieComponent: FC<IProps> = ({ currentData, currentMonth }) => {
             const lastMonth = (communal_service?.at(-1))
             const stringMonth = lastMonth?.month
             setMonth(stringMonth)
+            if(error) throw error
         }
         if (currentMonth) {
             setMonth(currentMonth)

@@ -11,7 +11,6 @@ import imgHotWaterColor from './hotWaterColor.png';
 import imgCheckMark from './checkMark.png';
 import imgDelete from './delete.png';
 
-
 export {
     editImg,
     imgUser,

@@ -20,7 +20,6 @@ export const Registration: FC = () => {
     const onSubmit: SubmitHandler<IDataFormRegistration> = dataFormRegistration => {
         dispatch(addUser(dataFormRegistration))
         const registration = async () => {
-            try {
                 const { data, error } = await supabase.auth.signUp({
                     email: dataFormRegistration.email,
                     password: dataFormRegistration.password,
@@ -32,9 +31,6 @@ export const Registration: FC = () => {
                         }
                     }
                 })
-            } catch (error) {
-                throw error
-            }
         }
         registration()
     }

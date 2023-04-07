@@ -23,6 +23,8 @@ export const UserComp: FC = () => {
 
                 if(data) {
                     setProfileData(data) 
+                } else {
+                    throw error
                 }
         }
         getProfileData()

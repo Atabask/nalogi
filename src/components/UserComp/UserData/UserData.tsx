@@ -18,7 +18,6 @@ export const UserData: FC<IProps> = ({ profile }: IProps) => {
 
     const onSubmit: SubmitHandler<FieldValues> = updateData => {
         const updateProfile = async () => {
-            try {
                 const { data, error } = await supabase
                 .from('profiles')
                 .update({
@@ -28,9 +27,7 @@ export const UserData: FC<IProps> = ({ profile }: IProps) => {
                 })
                 .eq('id', user?.id)
                 window.location.reload()
-            } catch (err) {
-                throw err
-            }
+                if(error) throw error
         }
         updateProfile()
         setModalActive(false)
