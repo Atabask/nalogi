@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Registration } from '@components/Registration/Registration';
-import { Login } from '@components/Login/login';
-import { Navigation } from '@components/Navigation/navigation';
+import { Login } from '@app/src/components/Login/Login';
+import { Navigation } from '@app/src/components/Navigation/Navigation';
 import { 
   Page404, 
   DataHousingAndCommunalServices,
