@@ -1,9 +1,9 @@
-import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 import React, { FC, useEffect, useState } from 'react';
 import { useNavigate, } from 'react-router-dom';
 import type { Profile } from '@interfaces';
 import supabase from '@supabaseClient';
 import { UserData } from './UserData/UserData';
+const { useSupabaseClient, useUser } = require('@supabase/auth-helpers-react')
 
 
 export const UserComp: FC = () => {

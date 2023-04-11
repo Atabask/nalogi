@@ -1,4 +1,3 @@
-import { useUser } from '@supabase/auth-helpers-react';
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { SubmitHandler } from 'react-hook-form/dist/types';
@@ -16,6 +15,7 @@ import {
     imgColdWaterColor,
     imgCheckMark
 } from '@icons';
+const { useUser } = require('@supabase/auth-helpers-react')
 
 
 export const DataHousingAndCommunalServicesComp: FC = () => {

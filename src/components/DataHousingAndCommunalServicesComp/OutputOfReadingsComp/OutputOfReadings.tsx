@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import supabase from '@supabaseClient';
 import { PieComponent } from './Pie/Pie';
 import { useAppSelector } from '@app/src/hooks/redux';
-import { useUser } from '@supabase/auth-helpers-react';
+const { useUser } = require('@supabase/auth-helpers-react')
 
 
 export const OutputOfReadingsComp: FC = () => {

@@ -3,7 +3,7 @@ import supabase from '@supabaseClient';
 import { HistoryCard } from './HistoryDataCard/HistoryCard';
 import type { CommunalService } from '@interfaces';
 import { useDebounce } from '@app/src/hooks/debounce';
-import { useUser } from '@supabase/auth-helpers-react';
+const { useUser } = require('@supabase/auth-helpers-react')
 
 
 export const HistoryComp: FC = () => {

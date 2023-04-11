@@ -1,9 +1,9 @@
 import React, { FC, useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useUser } from '@supabase/auth-helpers-react';
 import supabase from "@supabaseClient";
 import { IPicture } from "@interfaces";
 import { imgUser } from "@icons";
+const { useUser } = require('@supabase/auth-helpers-react')
 
 
 export const UserImage: FC = () => {
