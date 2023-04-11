@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { UserComp } from '@components/UserComp/UserComp';
+import { UserComp } from '@app/src/components/UserComp/UserCompMain';
 
 
 export const User: FC = () => {

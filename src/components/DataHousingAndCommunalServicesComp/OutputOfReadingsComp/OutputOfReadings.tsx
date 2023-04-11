@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 import supabase from '@supabaseClient';
-import { PieComponent } from './Pie/Pie';
+import { PieComponent } from './PieComp/Pie';
 import { useAppSelector } from '@app/src/hooks/redux';
 const { useUser } = require('@supabase/auth-helpers-react')
 

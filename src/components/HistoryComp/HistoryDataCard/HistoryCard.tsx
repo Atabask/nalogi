@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { IGetHistory } from '@interfaces';
-import { Modal } from '@components/modal/Modal';
+import { Modal } from '@app/src/components/modalComp/Modal';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import supabase from '@supabaseClient';
 import { editImg, imgDelete } from '@icons';
@@ -20,30 +20,30 @@ export const HistoryCard: FC<IProps> = ({ dataFromSupabase }: IProps) => {
 
     const onSubmit: SubmitHandler<FieldValues> = editData => {
         const updateProfile = async () => {
-                const { data, error } = await supabase
-                    .from('communal_service')
-                    .update({
-                        year: editData?.year,
-                        month: editData?.month,
-                        electro: editData?.electro,
-                        cold_water: editData?.coldWater,
-                        hot_water: editData?.hotWater,
-                    })
-                    .eq('id', dataFromSupabase.id)
-                    window.location.reload()
-                    if(error) throw error
+            const { data, error } = await supabase
+                .from('communal_service')
+                .update({
+                    year: editData?.year,
+                    month: editData?.month,
+                    electro: editData?.electro,
+                    cold_water: editData?.coldWater,
+                    hot_water: editData?.hotWater,
+                })
+                .eq('id', dataFromSupabase.id)
+            window.location.reload()
+            if (error) throw error
         }
         updateProfile()
         setModalActive(false)
     }
 
     const deleteCard = async () => {
-        const {data, error} = await supabase
-        .from('communal_service')
-        .delete()
-        .eq('id', dataFromSupabase.id)
+        const { data, error } = await supabase
+            .from('communal_service')
+            .delete()
+            .eq('id', dataFromSupabase.id)
 
-        if(error) throw error
+        if (error) throw error
     }
 
     return (

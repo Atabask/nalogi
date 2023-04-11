@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { UserImage } from "./UserImage";
-import { Modal } from "@components/modal/Modal";
+import { Modal } from "@app/src/components/modalComp/Modal";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { IUserData } from "@interfaces";
 import supabase from "@supabaseClient";
@@ -14,11 +14,11 @@ export const UserData: FC<IProps> = ({ profile }: IProps) => {
 
     const user = useUser()
     const [modalActive, setModalActive] = useState<boolean>(false)
-    const {register, handleSubmit} = useForm()
+    const { register, handleSubmit } = useForm()
 
     const onSubmit: SubmitHandler<FieldValues> = updateData => {
         const updateProfile = async () => {
-                const { data, error } = await supabase
+            const { data, error } = await supabase
                 .from('profiles')
                 .update({
                     adress: updateData?.adress,
@@ -26,8 +26,8 @@ export const UserData: FC<IProps> = ({ profile }: IProps) => {
                     user_name: updateData?.username,
                 })
                 .eq('id', user?.id)
-                window.location.reload()
-                if(error) throw error
+            window.location.reload()
+            if (error) throw error
         }
         updateProfile()
         setModalActive(false)
@@ -46,9 +46,9 @@ export const UserData: FC<IProps> = ({ profile }: IProps) => {
                 <Modal active={modalActive} setActive={setModalActive}>
                     <h1 className='text-4xl m-8'>Редактирование</h1>
                     <form method="POST" onSubmit={handleSubmit(onSubmit)} className='form-primary w-full'>
-                        <input {...register("username")} className="input-primary w-full" defaultValue={profile.user_name} type="text"/>
-                        <input {...register("adress")} className="input-primary w-full" defaultValue={profile.adress} type="text"/>
-                        <input {...register("phone")} className="input-primary w-full" defaultValue={profile.phone} type="tel"/>
+                        <input {...register("username")} className="input-primary w-full" defaultValue={profile.user_name} type="text" />
+                        <input {...register("adress")} className="input-primary w-full" defaultValue={profile.adress} type="text" />
+                        <input {...register("phone")} className="input-primary w-full" defaultValue={profile.phone} type="tel" />
                         <button type='submit' className="btn-primary w-52 shadow-md">Обновить</button>
                     </form>
                 </Modal>

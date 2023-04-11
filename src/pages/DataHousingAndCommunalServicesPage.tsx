@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { DataHousingAndCommunalServicesComp } from '@components/DataHousingAndCommunalServicesComp/DataHousingAndCommunalServicesComp';
+import { DataHousingAndCommunalServicesComp } from '@app/src/components/DataHousingAndCommunalServicesComp/DataHousingAndCommunalServicesMain';
 
 
 export const DataHousingAndCommunalServices: FC = () => {

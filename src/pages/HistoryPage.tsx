@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { HistoryComp } from '@components/HistoryComp/HistoryComp';
+import { HistoryComp } from '@app/src/components/HistoryComp/HistoryMain';
 
 
 

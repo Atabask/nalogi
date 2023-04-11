@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { CalculationOfReadingsComp } from '@components/CalculationOfReadingsComp/CalculationOfReadingsComp';
+import { CalculationOfReadingsComp } from '@app/src/components/CalculationOfReadingsComp/CalculationOfReadingsMain';
 
 
 export const Calculate: FC = () => {
