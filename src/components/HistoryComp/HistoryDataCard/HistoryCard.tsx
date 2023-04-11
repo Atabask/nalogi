@@ -31,7 +31,11 @@ export const HistoryCard: FC<IProps> = ({ dataFromSupabase }: IProps) => {
                 })
                 .eq('id', dataFromSupabase.id)
             window.location.reload()
-            if (error) throw error
+            if(data) {
+                return null
+            } else {
+                throw error
+            }
         }
         updateProfile()
         setModalActive(false)
@@ -43,7 +47,11 @@ export const HistoryCard: FC<IProps> = ({ dataFromSupabase }: IProps) => {
             .delete()
             .eq('id', dataFromSupabase.id)
 
-        if (error) throw error
+            if(data) {
+                return null
+            } else {
+                throw error
+            }
     }
 
     return (

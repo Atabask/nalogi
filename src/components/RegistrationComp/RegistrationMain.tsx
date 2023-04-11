@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '@hooks/redux';
+import { useAppDispatch } from '@hooks/redux';
 import { IDataFormRegistration, IFormRegistration } from '@interfaces';
 import { formRegistrationSlice } from '@store/slices/formRegistrationSlice';
 import supabase from '@supabaseClient';
@@ -11,7 +11,7 @@ const { useUser } = require('@supabase/auth-helpers-react')
 export const Registration: FC = () => {
 
     const { register, handleSubmit } = useForm<IFormRegistration>()
-    const { dataRegistrationState } = useAppSelector(state => state.formRegistrationSliceReducer)
+
     const { addUser } = formRegistrationSlice.actions
     const dispatch = useAppDispatch()
     const user = useUser()
@@ -31,6 +31,11 @@ export const Registration: FC = () => {
                         }
                     }
                 })
+                if(data) {
+                    return null
+                } else {
+                    throw error
+                }
         }
         registration()
     }

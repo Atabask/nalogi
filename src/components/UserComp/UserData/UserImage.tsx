@@ -22,8 +22,12 @@ export const UserImage: FC = () => {
             .from('users-avatars')
             .upload(user?.id + '/' + user?.id, avatar)
 
-            if(error) throw error
-        window.location.reload()
+            window.location.reload()
+            if(data) {
+                return null
+            } else {
+                throw error
+            }
     }
 
     useEffect(() => {
@@ -40,7 +44,7 @@ export const UserImage: FC = () => {
             } 
         }
         if (!avatar) getAvatarFromServer()
-    },[file])
+    },[avatar, file, user?.id])
 
     return (
         <>

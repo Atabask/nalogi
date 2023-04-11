@@ -27,7 +27,11 @@ export const UserData: FC<IProps> = ({ profile }: IProps) => {
                 })
                 .eq('id', user?.id)
             window.location.reload()
-            if (error) throw error
+            if(data) {
+                return null
+            } else {
+                throw error
+            }
         }
         updateProfile()
         setModalActive(false)

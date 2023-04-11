@@ -14,7 +14,6 @@ export const OutputOfReadingsComp: FC = () => {
 
     useEffect(() => {
         const getDataSupabases = async () => {
-
             const { data: communal_service, error } = await supabase
                 .from('communal_service')
                 .select('electro, cold_water, hot_water')
@@ -38,7 +37,7 @@ export const OutputOfReadingsComp: FC = () => {
         } else {
             getDataSupabases()
         }
-    }, [formDataNumber])
+    }, [currentData, formDataNumber, user?.id])
 
     return (
         <>

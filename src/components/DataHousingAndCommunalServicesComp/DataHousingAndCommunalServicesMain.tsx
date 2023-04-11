@@ -43,7 +43,12 @@ export const DataHousingAndCommunalServicesComp: FC = () => {
                     user_id: user?.id
                 }
             ])
-            if (error) throw error
+            
+            if(data) {
+                return null
+            } else {
+                throw error
+            }
     }
 
     return (

@@ -43,7 +43,7 @@ export const HistoryComp: FC = () => {
         } else {
             getHistoryDataCommunalService()
         }
-    }, [dataCommunalService, debounced])
+    }, [dataCommunalService, debounced, user?.id])
 
     return (
         <div className='flex flex-col justify-items-start m-auto w-9/12'>
