@@ -1,4 +1,4 @@
-export * from './404Page'
+export * from './ErrorPage'
 export * from './CalculatePage'
 export * from './DataHousingAndCommunalServicesPage'
 export * from './HistoryPage'
