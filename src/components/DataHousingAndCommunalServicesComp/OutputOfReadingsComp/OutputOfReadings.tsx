@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { FC, useState, useEffect } from 'react';
 import supabase from '@supabaseClient';
 import { PieComponent } from './PieComp/Pie';
@@ -11,6 +12,7 @@ export const OutputOfReadingsComp: FC = () => {
     const [currentData, setCurrentData] = useState<number[]>([])
     const formDataNumber = useAppSelector((state) => state.formReducer.dataState[0])
     const [currentMonth, setCurrentMonth] = useState<string>('')
+
 
     useEffect(() => {
         const getDataSupabases = async () => {
@@ -37,7 +39,7 @@ export const OutputOfReadingsComp: FC = () => {
         } else {
             getDataSupabases()
         }
-    }, [currentData, formDataNumber, user?.id])
+    }, [ formDataNumber, user?.id])
 
     return (
         <>
