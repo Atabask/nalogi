@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Registration } from '@components/Registration/Registration';
-import { Login } from '@app/src/components/Login/Login';
+import { Login } from '@app/src/components/LoginComp/Login';
 import { Navigation } from '@app/src/components/Navigation/Navigation';
 import { 
   Page404, 
