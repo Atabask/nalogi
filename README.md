@@ -10,7 +10,7 @@
   
   В качестве backend взят supabase
   
-  Пройзведен deploy на Nelify https://kommunalkasave.netlify.app
+  Пройзведен deploy на Netlify https://kommunalkasave.netlify.app
 
 ## Использованные технологии:
 
