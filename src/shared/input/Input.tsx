@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { UseFormRegisterReturn } from 'react-hook-form'
 
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
