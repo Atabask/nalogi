@@ -10,7 +10,8 @@
         "@hooks/*": ["./src/hooks/*"],
         "@store/*": ["./src/store/*"],
         "@pages/*": ["./src/pages/*"],
-        "@generated-types": ["./generated-types"]
+        "@generated-types": ["./generated-types"],
+        "@shared/*": ["./src/shared/*"]
       }
     }
   }

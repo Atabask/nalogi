@@ -3,6 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import supabase from "@supabaseClient";
 import { IPicture } from "@interfaces";
 import { imgUser } from "@icons";
+import { Button } from "@app/src/shared/button/Button";
 const { useUser } = require('@supabase/auth-helpers-react')
 
 
@@ -58,7 +59,7 @@ export const UserImage: FC = () => {
                             {
                                 file 
                                 ?
-                                <button className="btn-primary">Изменить</button>
+                                <Button >Изменить</Button>
                                 :
                                 null
                             }
@@ -72,7 +73,7 @@ export const UserImage: FC = () => {
                             {
                                 file 
                                 ?
-                                <button className="btn-primary">Изменить</button>
+                                <Button >Изменить</Button>
                                 :
                                 null
                             }

@@ -30,10 +30,10 @@
 
 @layer components {
   .btn-primary {
-    @apply border-2 p-3 rounded-lg hover:bg-sky-200 duration-200 text-xl
+    @apply border-2 p-4 rounded-lg hover:bg-sky-200 duration-200 text-xl w-2/4
   }
   .input-primary {
-    @apply p-3 text-xl rounded-lg border-2 
+    @apply p-3 text-xl rounded-lg border-2 w-full m-2
   }
   .input-primary-340 {
     @apply p-2 text-xl rounded-lg border-2
@@ -81,7 +81,7 @@
     @apply p-4 gap-2 items-center
   }
   .form-data-communal-services {
-    @apply flex gap-4 w-full justify-around
+    @apply flex gap-4 justify-around w-10/12 m-auto
   }
   .form-data-communal-services-340 {
     @apply flex-col items-center gap-8

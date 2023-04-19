@@ -1,9 +1,11 @@
 import React, { FC, useState } from 'react';
 import { IGetHistory } from '@interfaces';
-import { Modal } from '@app/src/components/modalComp/Modal';
+import { Modal } from '@shared/modal/Modal';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import supabase from '@supabaseClient';
 import { editImg, imgDelete } from '@icons';
+import { Button } from '@shared/button/Button';
+import { Input } from '@shared/input/Input';
 
 
 interface IProps {
@@ -63,19 +65,19 @@ export const HistoryCard: FC<IProps> = ({ dataFromSupabase }: IProps) => {
                 <h2 className="text-2xl">Горячая воды: {dataFromSupabase.hot_water} Кубов</h2>
                 <h2 className="text-2xl">Холодная вода: {dataFromSupabase.cold_water} Кубов</h2>
                 <div className='flex absolute top-2 right-2'>
-                    <button className=' hover:bg-sky-200 duration-200 rounded-lg p-1'>
+                    <Button >
                         <img src={editImg} alt="#" className='w-8 h-8' onClick={() => setModalActive(true)} />
-                    </button>
-                    <button className=' hover:bg-sky-200 duration-200 rounded-lg p-1'>
+                    </Button>
+                    <Button>
                         <img src={imgDelete} alt="#" className='w-8 h-8' onClick={() => deleteCard()} />
-                    </button>
+                    </Button>
                 </div>
             </div>
             <Modal active={modalActive} setActive={setModalActive}>
                 <form method='POST' onSubmit={handleSubmit(onSubmit)} className='form-primary w-full'>
                     <h1 className='text-3xl '>Для редактирования показаний</h1>
-                    <input className='input-primary w-10/12' defaultValue={year} {...register("year")} />
-                    <select {...register("month")} required className='text-2xl p-3 rounded-lg border-2 w-10/12'>
+                    <Input defaultValue={year} {...register("year")} />
+                    <select {...register("month")} required className='text-2xl p-3 rounded-lg border-2 w-full'>
                         <option className='text-2xl'>Январь</option>
                         <option className='text-2xl'>Февраль</option>
                         <option className='text-2xl'>Март</option>
@@ -89,10 +91,10 @@ export const HistoryCard: FC<IProps> = ({ dataFromSupabase }: IProps) => {
                         <option className='text-2xl'>Ноябрь</option>
                         <option className='text-2xl'>Декабрь</option>
                     </select>
-                    <input  {...register("electro")} defaultValue={dataFromSupabase.electro} required className='input-primary w-10/12' type='text' placeholder='Электричество' />
-                    <input {...register("hotWater")} defaultValue={dataFromSupabase.hot_water} required className='input-primary w-10/12' type='text' placeholder='Горячая вода' />
-                    <input {...register("coldWater")} defaultValue={dataFromSupabase.cold_water} required className='input-primary w-10/12' type='text' placeholder='Холодная вода' />
-                    <button type='submit' className='shadow-md btn-primary'>Сохранить</button>
+                    <Input  {...register("electro")} defaultValue={dataFromSupabase.electro} required type='text' placeholder='Электричество' />
+                    <Input {...register("hotWater")} defaultValue={dataFromSupabase.hot_water} required type='text' placeholder='Горячая вода' />
+                    <Input {...register("coldWater")} defaultValue={dataFromSupabase.cold_water} required type='text' placeholder='Холодная вода' />
+                    <Button>Сохранить</Button>
                 </form>
             </Modal>
         </>

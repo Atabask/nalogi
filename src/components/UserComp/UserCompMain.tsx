@@ -3,6 +3,7 @@ import { useNavigate, } from 'react-router-dom';
 import type { Profile } from '@interfaces';
 import supabase from '@supabaseClient';
 import { UserData } from './UserData/UserData';
+import { Button } from '@app/src/shared/button/Button';
 const { useSupabaseClient, useUser } = require('@supabase/auth-helpers-react')
 
 
@@ -12,20 +13,20 @@ export const UserComp: FC = () => {
     const navigate = useNavigate()
     const [profileData, setProfileData] = useState<Profile[]>()
     const user = useUser()
-    
+
     useEffect(() => {
         const getProfileData = async () => {
-            const { data: {user} } = await supabase.auth.getUser()
+            const { data: { user } } = await supabase.auth.getUser()
             const { data, error } = await supabase
                 .from('profiles')
                 .select()
                 .eq('id', user?.id)
 
-                if(data) {
-                    setProfileData(data) 
-                } else {
-                    throw error
-                }
+            if (data) {
+                setProfileData(data)
+            } else {
+                throw error
+            }
         }
         getProfileData()
     }, [])
@@ -39,22 +40,20 @@ export const UserComp: FC = () => {
     return (
         <div className='flex flex-col items-center w-11/12 m-auto'>
             <h1 className='@media340:p-primary-340 text-4xl m-10'><b>Данные аккаунта {user?.email}</b></h1>
-            
+
             {profileData && (
                 <div>
-                    {profileData.map(profile =>(
-                        <UserData profile={profile} key={profile.id}/>
+                    {profileData.map(profile => (
+                        <UserData profile={profile} key={profile.id} />
                     ))}
                 </div>
             )}
             {
                 user
-                    ?
-                    <button 
-                    className='btn-primary w-60 m-10' 
-                    onClick={() => signOut()}>Выйти</button>
-                    :
-                    null
+                    ? <div className='w-2/3 flex justify-center mt-4'>
+                        <Button onClick={() => signOut()}>Выйти</Button>
+                    </div>
+                    : null
             }
 
         </div>

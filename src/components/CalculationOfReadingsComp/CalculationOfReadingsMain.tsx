@@ -1,3 +1,5 @@
+import { Button } from '@app/src/shared/button/Button';
+import { Input } from '@app/src/shared/input/Input';
 import React, { FC, useState } from 'react';
 
 
@@ -37,8 +39,8 @@ export const CalculationOfReadingsComp: FC = () => {
             <div className='flex flex-col gap-4'>
                 <div className='flex @media340:flex-col'>
                     <div className='flex flex-col gap-4'>
-                        <input className='@media340:input-primary-340 w-60 input-primary' onChange={handleChangeAmount} type='text' placeholder='Данные с ИПУ' value={amount} />
-                        <input className='@media340:input-primary-340 w-60 input-primary' onChange={handleChangeRate} type='text' placeholder='Тариф' value={rate} />
+                        <Input onChange={handleChangeAmount} type='text' placeholder='Данные с ИПУ' value={amount} />
+                        <Input onChange={handleChangeRate} type='text' placeholder='Тариф' value={rate} />
                     </div>
                     {
                         result
@@ -51,8 +53,8 @@ export const CalculationOfReadingsComp: FC = () => {
                     }
                 </div>
                 <div className='flex @media340:flex-col gap-4 justify-center'>
-                    <button className='btn-primary w-60' onClick={(() => calculate())}>Рассчитать</button>
-                    <button className='btn-primary w-60' onClick={(() => remove())}>Сбросить</button>
+                    <Button onClick={(() => calculate())}>Рассчитать</Button>
+                    <Button onClick={(() => remove())}>Сбросить</Button>
                 </div>
             </div>
         </div>

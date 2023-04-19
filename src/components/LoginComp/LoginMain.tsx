@@ -2,6 +2,8 @@ import React, { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import supabase from '@supabaseClient';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { Button } from '@shared/button/Button';
+import { Input } from '@shared/input/Input';
 const { useUser } = require('@supabase/auth-helpers-react')
 
 export const Login: FC = () => {
@@ -32,15 +34,15 @@ export const Login: FC = () => {
     })
 
     return (
-        <div className="flex flex-col items-center m-auto">
+        <div className="w-2/5 flex flex-col items-center m-auto">
             <h1>test1111@mail.ru <br /> 12345678</h1>
             <h1 className="text-5xl m-10">Вход</h1>
             <form onSubmit={handleSubmit(onSubmit)} className='@media340:w-2/3 form-primary items-center w-1/2'>
-                <input {...register('email')} className="@media340:input-primary-340 @media340:w-11/12 input-primary w-5/12" type="email" placeholder='Email' />
-                <input {...register('password')} className="@media340:input-primary-340 @media340:w-11/12 input-primary w-5/12" type="password" placeholder='Пароль' />
-                <button className="btn-primary w-60">Войти</button>
+                <Input {...register('email')}  type="email" placeholder='Email' />
+                <Input {...register('password')} type="password" placeholder='Пароль' />
+                <Button>Войти</Button>
             </form>
-            <button onClick={() => navigate('/registration')} className="btn-primary w-60 mt-8">Нет аккаунта?</button>
+            <Button onClick={() => navigate('/registration')}>Нет аккаунта?</Button>
         </div>
     )
 }

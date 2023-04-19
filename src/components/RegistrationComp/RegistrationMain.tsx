@@ -5,6 +5,8 @@ import { useAppDispatch } from '@hooks/redux';
 import { IDataFormRegistration, IFormRegistration } from '@interfaces';
 import { formRegistrationSlice } from '@store/slices/formRegistrationSlice';
 import supabase from '@supabaseClient';
+import { Button } from '@shared/button/Button';
+import { Input } from '@shared/input/Input';
 const { useUser } = require('@supabase/auth-helpers-react')
 
 
@@ -47,15 +49,15 @@ export const Registration: FC = () => {
     })
 
     return (
-        <div className='flex flex-col items-center'>
+        <div className='w-2/5 m-auto flex flex-col items-center'>
             <h1 className='text-5xl m-10'>Регистрация</h1>
             <form onSubmit={handleSubmit(onSubmit)} className='@media340:w-2/3 form-primary items-center w-1/2'>
-                <input {...register("username")} className="@media340:input-primary-340 @media340:w-11/12 input-primary w-5/12" placeholder='Введите имя и фамилию' type="text" />
-                <input {...register("email")} className="@media340:input-primary-340 @media340:w-11/12 input-primary w-5/12" placeholder='Введите Email' type="email" />
-                <input {...register("password")} className="@media340:input-primary-340 @media340:w-11/12 input-primary w-5/12" placeholder='Введите пароль' type="password" />
-                <input {...register("adress")} className="@media340:input-primary-340 @media340:w-11/12 input-primary w-5/12" placeholder='Введите адрeс' type="text" />
-                <input {...register("phone")} className="@media340:input-primary-340 @media340:w-11/12 input-primary w-5/12" placeholder='Введите номер телефона' type="tel" />
-                <button type='submit' className="btn-primary w-60">Регистрация</button>
+                <Input {...register("username")} placeholder='Введите имя и фамилию' type="text" />
+                <Input {...register("email")} placeholder='Введите Email' type="email" />
+                <Input {...register("password")} placeholder='Введите пароль' type="password" />
+                <Input {...register("adress")} placeholder='Введите адрeс' type="text" />
+                <Input {...register("phone")} placeholder='Введите номер телефона' type="tel" />
+                <Button>Регистрация</Button>
             </form>
         </div>
     )

@@ -1,9 +1,11 @@
 import React, { FC, useState } from "react";
 import { UserImage } from "./UserImage";
-import { Modal } from "@app/src/components/modalComp/Modal";
+import { Modal } from '@shared/modal/Modal';
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { IUserData } from "@interfaces";
 import supabase from "@supabaseClient";
+import { Button } from "@shared/button/Button";
+import { Input } from "@shared/input/Input";
 const { useUser } = require('@supabase/auth-helpers-react')
 
 interface IProps {
@@ -45,15 +47,15 @@ export const UserData: FC<IProps> = ({ profile }: IProps) => {
                     <h2 className='text-xl'>Имя: {profile.user_name}</h2>
                     <h2 className='text-xl'>Телефон: {profile.phone}</h2>
                     <h2 className='@media340:text-center text-xl'>Адрес: {profile.adress}</h2>
-                    <button onClick={() => setModalActive(true)} className="btn-primary w-52">Редактировать</button>
+                    <Button onClick={() => setModalActive(true)}>Редактировать</Button>
                 </div>
                 <Modal active={modalActive} setActive={setModalActive}>
                     <h1 className='text-4xl m-8'>Редактирование</h1>
                     <form method="POST" onSubmit={handleSubmit(onSubmit)} className='form-primary w-full'>
-                        <input {...register("username")} className="input-primary w-full" defaultValue={profile.user_name} type="text" />
-                        <input {...register("adress")} className="input-primary w-full" defaultValue={profile.adress} type="text" />
-                        <input {...register("phone")} className="input-primary w-full" defaultValue={profile.phone} type="tel" />
-                        <button type='submit' className="btn-primary w-52 shadow-md">Обновить</button>
+                        <Input {...register("username")} defaultValue={profile.user_name} type="text" />
+                        <Input {...register("adress")} defaultValue={profile.adress} type="text" />
+                        <Input {...register("phone")} defaultValue={profile.phone} type="tel" />
+                        <Button>Обновить</Button>
                     </form>
                 </Modal>
             </div>
